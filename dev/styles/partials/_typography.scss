@@ -18,22 +18,10 @@ textarea::placeholder {
 	font-size: 1.6rem;
 	font-style: normal;
 	line-height: 120%;
-	color: $mainColor;
+	color: $blackColor;
 }
 
-.h1,
-h1 {
-	font-size: 3.2rem;
-	line-height: 1.1;
 
-	@include minw($mob) {
-		font-size: calc(3.2rem + 8*(100vw - 375px)/625);
-	}
-
-	@include minw($sm-pc) {
-		font-size: 5.6rem;
-	}
-}
 
 .h2,
 h2 {
@@ -90,7 +78,7 @@ form label {
 	input,
 	textarea {
 		background: #fff;
-		border: 1px solid rgba(93,95,239,.2);
+		border: 1px solid rgba(93, 95, 239, .2);
 		border-radius: 1.6rem;
 		padding: 2rem 1.8rem;
 		font-weight: 400;

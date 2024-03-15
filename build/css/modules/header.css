@@ -1,138 +1,38 @@
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 2rem 0;
-  -webkit-backdrop-filter: blur(4rem);
-  backdrop-filter: blur(4rem);
-  z-index: 99;
-  background-color: #191919;
-  transition: 0.3s linear;
+  padding-top: 23px;
+  padding-bottom: 23px;
 }
-@media only screen and (min-width: 992px) {
-  .header {
-    position: sticky;
-  }
-}
-.header--hide {
-  transform: translate(0, -100%);
-}
-.header .container {
+.header__inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
-.header__logo {
-  z-index: 200;
-  transition: 0.5s linear;
+.header__list {
+  display: flex;
+  gap: clamp(70px, 12vw, 222px);
 }
-.header__burger {
-  display: block;
-  width: 3.2rem;
-  height: 3.2rem;
-  z-index: 200;
+.header__list li a,
+.header__list li span {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
-@media only screen and (min-width: 992px) {
-  .header__burger {
-    display: none;
-  }
+.header__item--active a {
+  color: #902908;
 }
-.header__burger:before, .header__burger:after {
+.header__item--arrow a {
+  position: relative;
+  display: inline-block;
+  padding-right: 45px;
+}
+.header__item--arrow a:after {
   content: "";
   position: absolute;
-  width: 2.4rem;
-  height: 0.2rem;
-  left: 50%;
-  background-color: #fff;
-  transform: translate(-50%, -50%);
-  transition: top 0.15s linear 0.15s, transform 0.15s linear, background 0.3s linear, -webkit-transform 0.15s linear;
-}
-.header__burger:before {
-  top: calc(50% - 0.35rem);
-}
-.header__burger:after {
-  top: calc(50% + 0.35rem);
-}
-.header__menu {
-  position: fixed;
+  right: 0;
   top: 0;
-  left: 100%;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  z-index: 100;
-  transition: left 0.3s linear;
-  padding: 7rem 1.5rem 0;
-}
-@media only screen and (min-width: 992px) {
-  .header__menu {
-    width: auto;
-    height: auto;
-    position: static;
-    padding: 0;
-    background-color: transparent;
-    margin-left: auto;
-  }
-}
-.header__menu-list {
-  list-style-type: none;
-}
-@media only screen and (min-width: 992px) {
-  .header__menu-list {
-    display: flex;
-  }
-}
-.header__menu-list .menu-item a {
   display: block;
-  text-align: center;
-  text-decoration: none;
-  color: #000;
-  font-size: 1.8rem;
-  font-weight: bold;
-  padding: 2.4rem 0;
-}
-@media only screen and (min-width: 992px) {
-  .header__menu-list .menu-item a {
-    color: #fff;
-    padding: 1rem;
-  }
-}
-.header__menu-list .menu-item:not(:first-of-type) {
-  border-top: 0.1rem solid rgba(114, 117, 152, 0.2);
-}
-@media only screen and (min-width: 992px) {
-  .header__menu-list .menu-item:not(:first-of-type) {
-    border-top: 0;
-    margin-left: 2rem;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  body.menu-open .header__logo {
-    -webkit-filter: invert(1);
-    filter: invert(1);
-  }
-  body.menu-open .header__menu {
-    left: 0;
-  }
-  body.menu-open .header__burger::before, body.menu-open .header__burger::after {
-    background-color: #000;
-    -webkit-transition: top 0.15s linear, background 0.3s linear, -webkit-transform 0.15s linear 0.15s;
-    transition: top 0.15s linear, background 0.3s linear, -webkit-transform 0.15s linear 0.15s;
-    -o-transition: top 0.15s linear, transform 0.15s linear 0.15s, background 0.3s linear;
-    transition: top 0.15s linear, transform 0.15s linear 0.15s, background 0.3s linear;
-    transition: top 0.15s linear, transform 0.15s linear 0.15s, background 0.3s linear, -webkit-transform 0.15s linear 0.15s;
-  }
-  body.menu-open .header__burger:before {
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%) rotate(45deg);
-    -ms-transform: translate(-50%, -50%) rotate(45deg);
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-  body.menu-open .header__burger:after {
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-    -ms-transform: translate(-50%, -50%) rotate(-45deg);
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
+  width: 24px;
+  height: 24px;
+  background-image: url("../../img/icons/header-arrow.svg");
 }

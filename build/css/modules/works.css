@@ -1,0 +1,13 @@
+.works {
+  padding-top: 50px;
+  padding-bottom: 123px;
+}
+.works__title {
+  margin-bottom: 60px;
+  font-weight: 700;
+  font-size: 50px;
+  color: #902908;
+  line-height: 90%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}

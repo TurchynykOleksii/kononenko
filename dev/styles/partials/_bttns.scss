@@ -6,7 +6,7 @@
 	align-items: center;
 	justify-content: center;
 	color: #fff;
-	background-color: $bttnColor;
+	background-color: $blackColor;
 	padding: 1.6rem 2rem;
 	border-radius: 1.8rem;
 	font-size: 1.6rem;
@@ -17,13 +17,13 @@
 .bttn-border {
 	padding: 1.6rem 2rem;
 	background-color: transparent;
-	border: 1px solid $bttnColor;
-	color: $bttnColor;
+	border: 1px solid $blackColor;
+	color: $whiteColor;
 }
 
 .bttn-white {
 	background-color: #fff;
-	color: $bttnColor;
+	color: $blackColor;
 }
 
 .bttn[disabled] {
@@ -32,21 +32,21 @@
 }
 
 .bttn--red {
-	background-color: $bttnSecondColor;
+	background-color: $accentColor;
 }
 
 .bttn-loading,
 .wpcf7 .wpcf7-form.submitting .wpcf7-submit {
 	background-image: url(../img/general/spinner.svg);
-	background-repeat: no-repeat!important;
-	background-position: center!important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
 	text-shadow: none;
 	color: transparent;
 }
 
 .bttn--small {
 	padding: 1rem 2rem;
-   border-radius: 1.2rem;
+	border-radius: 1.2rem;
 }
 
 .bttn--big {

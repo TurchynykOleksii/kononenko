@@ -1,0 +1,16 @@
+@import "../core";
+
+.works {
+  padding-top: 50px;
+  padding-bottom: 123px;
+
+  &__title {
+    margin-bottom: 60px;
+    font-weight: 700;
+    font-size: 50px;
+    color: $accentColor;
+    line-height: 90%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+}

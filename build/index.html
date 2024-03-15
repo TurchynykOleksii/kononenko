@@ -5,331 +5,99 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gulp template</title>
+	<title>KONONENKO</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="Shortcut Icon" type="image/x-icon" href="img/general/favicon.svg" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="img/icons/favicon.png" />
 
-	<link rel="stylesheet" href="css/modules/example.css"><link rel="stylesheet" href="css/modules/banner.css"><link rel="stylesheet" href="css/modules/video.css"><link rel="stylesheet" href="css/modules/anchor.css"><link rel="stylesheet" href="css/modules/tabs.css"><link rel="stylesheet" href="css/modules/popup.css"><link rel="stylesheet" href="css/modules/slider.css">
 
-	<link rel="stylesheet" href="css/libs/swiper.css">
 </head>
 
 <body>
 
-<!-- Add autoHide class to automatically hide the header on scroll -->
-<header class="header autoHide">
-	<div class="container">
-		<a href="/" class="header__logo"><img src="img/general/logo.svg" alt="logo"></a>
+	<!-- Add autoHide class to automatically hide the header on scroll -->
+	<header class="header">
+		<div class="wrapper">
+			<div class="header__inner">
+				<a href="/" class="header__logo">
+					<svg width="191" height="46" viewBox="0 0 191 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M178.635 37.4481C172.715 37.4481 168.619 32.7121 168.619 25.1921C168.619 17.6721 172.715 13.1281 178.635 13.1281C184.523 13.1281 188.619 17.7041 188.619 25.1921C188.619 32.7121 184.523 37.4481 178.635 37.4481ZM178.635 34.8241C182.827 34.8241 185.611 31.0481 185.611 25.1921C185.611 19.3361 182.827 15.7201 178.635 15.7201C174.411 15.7201 171.659 19.3361 171.659 25.1921C171.659 31.0481 174.411 34.8241 178.635 34.8241Z"
+							fill="black" />
+						<path
+							d="M151.656 37.0001V13.5441H154.632V25.3521H154.696L164.488 13.5441H167.848L160.488 22.4721L168.968 37.0001H165.704L158.664 24.8081L154.632 29.5761V37.0001H151.656Z"
+							fill="black" />
+						<path
+							d="M130.131 37.0001V13.5441H133.171L141.715 28.3281L144.243 33.1921H144.403C144.211 30.8241 143.987 28.1681 143.987 25.7361V13.5441H146.835V37.0001H143.763L135.251 22.2161L132.723 17.3841H132.563C132.723 19.7521 132.947 22.2161 132.947 24.7121V37.0001H130.131Z"
+							fill="black" />
+						<path d="M111.127 37V13.16H126.231V17.928H116.855V22.344H124.823V27.144H116.855V32.2H126.583V37H111.127Z"
+							fill="black" />
+						<path
+							d="M88.2896 37V13.16H94.1135L100.034 24.584L102.37 29.864H102.53C102.242 27.336 101.762 23.912 101.762 21.064V13.16H107.202V37H101.378L95.4896 25.512L93.1535 20.296H92.9936C93.2496 22.952 93.7296 26.216 93.7296 29.096V37H88.2896Z"
+							fill="black" />
+						<path
+							d="M74.5575 37.448C68.0615 37.448 63.6455 32.776 63.6455 24.968C63.6455 17.16 68.0615 12.744 74.5575 12.744C81.0535 12.744 85.4695 17.192 85.4695 24.968C85.4695 32.776 81.0535 37.448 74.5575 37.448ZM74.5575 32.52C77.6935 32.52 79.6455 29.576 79.6455 24.968C79.6455 20.36 77.6935 17.64 74.5575 17.64C71.4215 17.64 69.5015 20.36 69.5015 24.968C69.5015 29.576 71.4215 32.52 74.5575 32.52Z"
+							fill="black" />
+						<path
+							d="M43.6562 37.0001V13.5441H46.6963L55.2402 28.3281L57.7682 33.1921H57.9282C57.7362 30.8241 57.5123 28.1681 57.5123 25.7361V13.5441H60.3603V37.0001H57.2882L48.7762 22.2161L46.2482 17.3841H46.0882C46.2482 19.7521 46.4722 22.2161 46.4722 24.7121V37.0001H43.6562Z"
+							fill="black" />
+						<path
+							d="M30.1786 37.4481C24.2586 37.4481 20.1626 32.7121 20.1626 25.1921C20.1626 17.6721 24.2586 13.1281 30.1786 13.1281C36.0666 13.1281 40.1626 17.7041 40.1626 25.1921C40.1626 32.7121 36.0666 37.4481 30.1786 37.4481ZM30.1786 34.8241C34.3706 34.8241 37.1546 31.0481 37.1546 25.1921C37.1546 19.3361 34.3706 15.7201 30.1786 15.7201C25.9546 15.7201 23.2026 19.3361 23.2026 25.1921C23.2026 31.0481 25.9546 34.8241 30.1786 34.8241Z"
+							fill="black" />
+						<path
+							d="M3.2002 37.0001V13.5441H6.1762V25.3521H6.2402L16.0322 13.5441H19.3922L12.0322 22.4721L20.5122 37.0001H17.2482L10.2082 24.8081L6.1762 29.5761V37.0001H3.2002Z"
+							fill="black" />
+					</svg>
+				</a>
 
-		<div class="header__menu">
-
-			<ul class="header__menu-list">
-				<li class="menu-item"><a href="page.html">page</a></li>
-				<li class="menu-item"><a href="#">Menu 2</a></li>
-				<li class="menu-item"><a href="#">Menu 3</a></li>
-			</ul>
+				<nav class="header__menu">
+					<ul class="header__list">
+						<li class="header__item">
+							<a href="#">about</a>
+						</li>
+						<li class="header__item header__item--active">
+							<a href="#">works</a>
+						</li>
+						<li class="header__item header__item--arrow">
+							<a href="#">
+								contact us
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</div>
-		
-		<div class="header__burger"></div>
-	</div>
-</header>
+	</header>
 
-<main class="main">
+	<main class="main">
 
-<section class="banner" id="banner">
-	<div class="container flex-2">
-		<div class="banner__wrap">
-			<h1>Стартовая сборка для темы Wordpress</h1>
-		</div>
-
-		<div class="banner__img">
-			<img src="img/gulp-white-logo.svg" alt="">
-		</div>
-	</div>
-
-	<div class="banner__bg bg" style="--bg-image: url('../img/cover/bg.png');"><div></div></div>
+<section class="hero">
+  <div class="wrapper">
+    <div class="hero__inner">
+      <div class="hero__title">
+        <h1 class="hero__headline">Kononenko</h1>
+        <p class="hero__subtext">
+          The art of transforming ideas into form
+        </p>
+      </div>
+      <div class="hero__services">
+        <ul class="hero__list">
+          <li class="hero__item">Furniture</li>
+          <li class="hero__item">Lighting</li>
+          <li class="hero__item">Product</li>
+          <li class="hero__item">Textile</li>
+          <li class="hero__item">Decoration</li>
+        </ul>
+        <strong class="hero__slogan">ID</strong>
+      </div>
+    </div>
+  </div>
 </section>
-<div class="anchor">
-	<div class="container">
-		<ul class="anchor__list">
-			<li class="anchor__item"><a href="#example" class="">Доп. классы</a></li>
-			<li class="anchor__item"><a href="#form" class="">CF7 форма</a></li>
-			<li class="anchor__item"><a href="#video" class="">Видео плеер</a></li>
-			<li class="anchor__item"><a href="#tabs">Табы</a></li>
-			<li class="anchor__item"><a href="#popup" class="">Попап окна</a></li>
-			<li class="anchor__item"><a href="#slider" class="">Слайдер</a></li>
-		</ul>
-	</div>
-</div>
-<section class="example" id="example">
-	<div class="container">
-		<h2>Сетка на флексах</h2>
-		<p>Укажите для контейнера универсальный класс .grid-{4,3,2} и все внутренние div примут данное правило</p>
-
-		<div class="example__wrap grid-4" data-grid="--p:20">
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 1</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 2</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 3</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 4</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="example__wrap grid-3">
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 1</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 2</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 3</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="example__wrap grid-2">
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 1</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-
-			<div class="example__item">
-				<div class="example__item-img">
-					<img src="img/example/example.svg" alt="example-image">
-				</div>
-
-				<div class="example__item-wrap">
-					<h3 class="example__item-title">Title 2</h3>
-					<p class="example__item-descr">Lorem ipsum dolor sit emet</p>
-				</div>
-			</div>
-		</div>
-
-		<h2>Кнопки</h2>
-		<a href="#popup-example" class="bttn">Открыть попап</a>
-		<button class="bttn bttn-border">Button border</button>
-		<button class="bttn bttn-white">Button white</button>
-		<button class="bttn bttn-loading">Loading</button>
-		<button class="bttn" disabled>Disabled</button>
-		<button class="bttn bttn--red">Second</button>
-
-		<button class="bttn bttn--small">Button small</button>
-		<button class="bttn bttn--big">Button big</button>
-
-	</div>
-</section>
-<section class="form" id="form">
-	<div class="container">
-		<h2 class="form__title">Contact Form 7 - стандартная структура основных полей</h2>
-
-		<div role="form" class="wpcf7" id="wpcf7-f5-o1" lang="uk" dir="ltr">
-			<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-
-			<form action="/#wpcf7-f5-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
-				<div style="display: none;">
-					<input type="hidden" name="_wpcf7" value="5" />
-					<input type="hidden" name="_wpcf7_version" value="5.5.6.1" />
-					<input type="hidden" name="_wpcf7_locale" value="uk" />
-					<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5-o1" />
-					<input type="hidden" name="_wpcf7_container_post" value="0" />
-					<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-				</div>
-
-				<label> Ваше ім'я
-					<span class="wpcf7-form-control-wrap your-name">
-						<input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" />
-					</span>
-				</label>
-				
-				<label> Ваш email
-					<span class="wpcf7-form-control-wrap your-email">
-						<input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" />
-					</span>
-				</label>
-				
-				<label> Ваше повідомлення (необов'язково)
-					<span class="wpcf7-form-control-wrap your-message">
-						<textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea>
-					</span>
-				</label>
-				
-				<span class="wpcf7-form-control-wrap menu-780">
-					<select name="menu-780" class="wpcf7-form-control wpcf7-select" aria-invalid="false">
-						<option value="option 1">option 1</option>
-						<option value="option 2">option 2</option>
-						<option value="option 3">option 3</option>
-					</select>
-				</span>
-				
-				<span class="wpcf7-form-control-wrap acceptance-form">
-					<span class="wpcf7-form-control wpcf7-acceptance">
-						<span class="wpcf7-list-item">
-							<label><input type="checkbox" name="acceptance-form" value="1" aria-invalid="false" />
-								<span class="wpcf7-list-item-label">Я погоджуюсь на обробку персональних даних</span>
-							</label>
-						</span>
-					</span>
-				</span>
-				
-				<input type="submit" value="Відправити" class="wpcf7-form-control has-spinner wpcf7-submit bttn" /><p style="display: none !important;"><label>&#916;<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="_wpcf7_ak_js" value="19"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p><div class="wpcf7-response-output" aria-hidden="true"></div>
-			</form>
-		</div>
-	</div>
-</section>
-<section class="video" id="video">
-	<div class="container">
-		<h2 class="video__title">Отложенная загрузка YouTube плеера</h2>
-		<p class="video__descr">Для настройки видео плеера необходимо передать id видео и любое изображение в качестве обложки</p>
-
-		<div class="video-frame" data-video-id="BfUpWHTYoJU">
-			<img src='img/video/cover.webp' alt='video_cover'>
-			<div class="iframe"></div>
-		</div>
-	</div>
-</section>
-
-
-<section>
-	<div class="container">
-		<div class="tabs-container" id="tabs">
-			<div class="tabs-wrap">
-				<ul class="tabs-switch">
-					<li data-filter="all" class="active">Все категории</li>
-					<li data-filter="1">Категория 1</li>
-					<li data-filter="2">Категория 2</li>
-					<li data-filter="3">Категория 3</li>
-					<li data-filter="4">Категория 4</li>
-					<li data-filter="5">Категория 5</li>
-					<li data-filter="6">Категория 6</li>
-				</ul>
-			</div>
-		
-			<div class="tabs-content">
-				<div class="tabs-item" data-term="1">
-					Category 1
-				</div>
-		
-				<div class=" tabs-item" data-term="2">
-					Category 2
-				</div>
-		
-				<div class="tabs-item" data-term="3">
-					Category 3
-				</div>
-		
-				<div class="tabs-item" data-term="4">
-					Category 4
-				</div>
-		
-				<div class="tabs-item" data-term="5">
-					Category 5
-				</div>
-		
-				<div class="tabs-item" data-term="6">
-					Category 6
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="slider" id="slider">
-	<div class="container">
-		<h2 class="slider__title">Swiper слайдер</h2>
-
-		<div class="swiper">
-			<h2 class="slider__title">
-				Слайдер в 3 колонки 
-			</h2>
-
-			<div class="swiper-button-prev"><img src="img/icons/slide_prev.svg" alt="prev"></div>
-			<div class="swiper-button-next"><img src="img/icons/slide_next.svg" alt="next"></div>
-
-			<div class="slider__slider swiper-wrapper">
-				<div class="slider__review swiper-slide">
-					<h2>Slide 1</h2>
-				</div>
-
-				<div class="slider__review swiper-slide">
-					<h2>Slide 2</h2>
-				</div>
-
-				<div class="slider__review swiper-slide">
-					<h2>Slide 3</h2>
-				</div>
-
-				<div class="slider__review swiper-slide">
-					<h2>Slide 4</h2>
-				</div>
-			</div>
-		</div>
-
-	</div>
+<section class="works">
+  <div class="wrapper">
+    <div class="works__inner">
+      <h2 class="works__title">/ works</h2>
+    </div>
+  </div>
 </section>
 
 </main>
@@ -340,44 +108,9 @@
 	</div>
 </footer>
 
-<script src="js/libs/jquery-3.6.0.min.js"></script> a
-<div class="popup-bg">
-	<div class="popup" id="popup-example">
-		<div class="popup__close">
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.996" viewBox="0 0 16 15.996">
-				<path id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" d="M21.181,19.287,26.9,13.572A1.339,1.339,0,1,0,25,11.678l-5.715,5.715-5.715-5.715a1.339,1.339,0,1,0-1.894,1.894l5.715,5.715L11.679,25a1.339,1.339,0,0,0,1.894,1.894l5.715-5.715L25,26.895A1.339,1.339,0,0,0,26.9,25Z" transform="translate(-11.285 -11.289)"/>
-			</svg>
-		</div>
+<script src="js/libs/jquery-3.6.0.min.js"></script>
 
-		<div class="popup__wrap">
-			<h2 class="popup__title">Заголовок попап окна</h2>
-			<div class="popup__descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita est doloremque temporibus dolorem adipisci, quibusdam in ipsum officia qui perferendis, rem quas? Reprehenderit labore facere ab quo exercitationem soluta maiores.</div>
-
-			<button class="popup__bttn bttn popup__bttn-close">Закрыть</button>
-		</div>
-	</div>
-
-	<div class="popup popup--thanks" id="popup-thanks">
-		<div class="popup__close">
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.996" viewBox="0 0 16 15.996">
-				<path id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" d="M21.181,19.287,26.9,13.572A1.339,1.339,0,1,0,25,11.678l-5.715,5.715-5.715-5.715a1.339,1.339,0,1,0-1.894,1.894l5.715,5.715L11.679,25a1.339,1.339,0,0,0,1.894,1.894l5.715-5.715L25,26.895A1.339,1.339,0,0,0,26.9,25Z" transform="translate(-11.285 -11.289)"/>
-			</svg>
-		</div>
-
-		<div class="popup__wrap">
-			<h2 class="popup__title">Успешная отправка формы</h2>
-			<div class="popup__descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita est doloremque temporibus dolorem adipisci, quibusdam in ipsum officia qui perferendis, rem quas? Reprehenderit labore facere ab quo exercitationem soluta maiores.</div>
-
-			<button class="popup__bttn bttn popup__bttn-close">Закрыть</button>
-		</div>
-	</div>
-</div>
-
-<script src="js/libs/swiper-bundle.min.js"></script>
 <script src="js/app.js" type="module"></script>
-<script src="js/modules/video.js"></script>
-<script src="js/modules/anchor.js"></script>
-<script src="js/modules/slider.js"></script>
 
 </body>
 
