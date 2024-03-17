@@ -1,0 +1,148 @@
+.about {
+  padding-bottom: 35px;
+}
+.about__title {
+  margin-bottom: 11px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.about__title span {
+  font-weight: 700;
+  font-size: 232px;
+  line-height: 1;
+  letter-spacing: -0.1em;
+  text-transform: uppercase;
+}
+.about__founded {
+  margin-left: 725px;
+  max-width: 793px;
+  width: 100%;
+}
+.about__founded-title {
+  margin-bottom: 22px;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.about__founded-title span {
+  display: block;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.about__name {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.about__info {
+  display: flex;
+}
+.about__list {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.benefits__list {
+  max-width: 725px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  flex-shrink: 0;
+}
+.benefits__list li {
+  max-width: 352px;
+}
+.benefits__list li:first-child {
+  text-align: justify;
+}
+.benefits__list li h4 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.benefits__list li p {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.slogan {
+  max-width: 793px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.slogan__title {
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.slogan p {
+  font-size: 22px;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.follow {
+  max-width: 195px;
+  width: 100%;
+  margin-left: auto;
+  align-self: flex-end;
+}
+.follow__title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.follow__item {
+  position: relative;
+}
+.follow__item:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../img/icons/arrow-up-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.follow__item a {
+  font-size: 22px;
+  line-height: 1.4;
+}
+.follow__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breadcrumbs {
+  margin-bottom: 84px;
+  display: flex;
+  gap: 12px;
+}
+.breadcrumbs__item {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.breadcrumbs__item:last-child {
+  color: #969696;
+}

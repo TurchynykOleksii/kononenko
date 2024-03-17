@@ -1,0 +1,174 @@
+@import "../core";
+
+
+
+.about {
+
+  padding-bottom: 35px;
+
+  &__title {
+    margin-bottom: 11px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    span {
+      font-weight: 700;
+      font-size: 232px;
+      line-height: 1;
+      letter-spacing: -0.1em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__founded {
+    margin-left: 725px;
+    max-width: 793px;
+    width: 100%;
+  }
+
+  &__founded-title {
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  &__info {
+    display: flex;
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.benefits__list {
+  max-width: 725px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  flex-shrink: 0;
+
+  li {
+    max-width: 352px;
+
+    &:first-child {
+      text-align: justify;
+    }
+
+    h4 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+  }
+}
+
+.slogan {
+  max-width: 793px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__title {
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: justify;
+  }
+}
+
+.follow {
+  max-width: 195px;
+  width: 100%;
+  margin-left: auto;
+  align-self: flex-end;
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url('../../img/icons/arrow-up-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    a {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.breadcrumbs {
+  margin-bottom: 84px;
+  display: flex;
+  gap: 12px;
+
+  &__item {
+    font-size: 16px;
+    line-height: 1.5;
+
+    &:last-child {
+      color: #969696;
+    }
+  }
+}
