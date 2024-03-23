@@ -4,12 +4,17 @@
 }
 .footer__title {
   margin-bottom: 40px;
-  font-size: 305px;
+  font-size: clamp(143px, 15.25vw, 305px);
   color: #902908;
   text-align: center;
   line-height: 1;
   letter-spacing: -0.06em;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 861px) {
+  .footer__title {
+    font-size: clamp(51px, 15.8vw, 143px);
+  }
 }
 .footer__list {
   margin-bottom: 32px;
@@ -22,8 +27,14 @@
   display: inline-block;
   padding-right: 56px;
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(24px, 2vw, 39px);
   text-transform: uppercase;
+}
+@media only screen and (max-width: 861px) {
+  .footer__link {
+    padding-right: 0;
+    font-size: clamp(14px, 5vw, 24px);
+  }
 }
 .footer__link:after {
   content: "";
@@ -37,6 +48,11 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+@media only screen and (max-width: 861px) {
+  .footer__link:after {
+    display: none;
+  }
+}
 .footer__copy {
   display: flex;
   justify-content: space-between;
@@ -48,10 +64,25 @@
   line-height: 1.4;
   color: #969696;
 }
+@media only screen and (max-width: 510px) {
+  .footer__copyright {
+    font-size: 12px;
+  }
+}
 .footer__copyright span {
   margin-left: 32px;
   font-size: 20px;
   color: #969696;
+}
+@media only screen and (max-width: 900px) {
+  .footer__copyright span {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .footer__copyright span {
+    font-size: 12px;
+  }
 }
 .footer__up {
   position: relative;
@@ -61,6 +92,17 @@
   font-size: 24px;
   text-transform: uppercase;
   color: #545454;
+}
+@media only screen and (max-width: 510px) {
+  .footer__up {
+    padding-right: 40px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .footer__up {
+    padding-right: 30px;
+  }
 }
 .footer__up:after {
   content: "";
@@ -73,4 +115,10 @@
   background-image: url("../../img/icons/footer-down.svg");
   background-position: center;
   background-repeat: no-repeat;
+}
+@media only screen and (max-width: 510px) {
+  .footer__up:after {
+    width: 20px;
+    height: 20px;
+  }
 }

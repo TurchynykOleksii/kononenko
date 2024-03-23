@@ -11,13 +11,22 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
+
+    @include maxw(1711px) {}
   }
 
   &__title-first {
     max-width: 870px;
     width: 100%;
     text-align: right;
+
+    @include maxw(1711px) {
+      max-width: 832px;
+      text-align: left;
+    }
+
   }
 
   &__title-second {
@@ -26,6 +35,13 @@
     width: 100%;
     color: $accentColor;
     text-align: left;
+
+    @include maxw(1711px) {
+      padding-top: 0;
+      text-align: right;
+    }
+
+
   }
 
   &__title-first,
@@ -35,6 +51,10 @@
     line-height: 100%;
     letter-spacing: -0.05em;
     text-transform: uppercase;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(38px, 11.7vw, 106px);
+    }
   }
 
   &__mould {

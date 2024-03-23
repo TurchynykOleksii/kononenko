@@ -9,12 +9,19 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .form__title-first {
   max-width: 870px;
   width: 100%;
   text-align: right;
+}
+@media only screen and (max-width: 1711px) {
+  .form__title-first {
+    max-width: 832px;
+    text-align: left;
+  }
 }
 .form__title-second {
   padding-top: 100px;
@@ -23,12 +30,23 @@
   color: #902908;
   text-align: left;
 }
+@media only screen and (max-width: 1711px) {
+  .form__title-second {
+    padding-top: 0;
+    text-align: right;
+  }
+}
 .form__title-first, .form__title-second {
   font-weight: 500;
   font-size: 100px;
   line-height: 100%;
   letter-spacing: -0.05em;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 900px) {
+  .form__title-first, .form__title-second {
+    font-size: clamp(38px, 11.7vw, 106px);
+  }
 }
 .form__mould {
   margin-left: auto;

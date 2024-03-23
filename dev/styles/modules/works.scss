@@ -19,13 +19,27 @@
     display: flex;
     flex-wrap: wrap;
     gap: 200px 0;
+
+    @include maxw($sm-pc) {
+      gap: 168px;
+    }
+
+    @include maxw($mob) {
+      margin-bottom: 60px;
+    }
   }
 
   &__item {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 20px 200px;
+    gap: 200px;
+
+    @include maxw($lg) {
+      flex-wrap: wrap;
+      gap: 168px;
+      justify-content: center;
+    }
   }
 
   &__item--reverse {
@@ -36,12 +50,55 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+
+  }
+
+  &__wrapper--big {
+    @include maxw($sm-pc) {
+      max-width: 991px;
+      width: 100%;
+    }
   }
 
   &__info {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+  }
+
+  &__img {
+    max-width: 991px;
+    max-height: 900px;
+  }
+
+  &__img--small {
+
+    @include maxw(920px) {
+      max-width: 991px;
+      max-height: 900px;
+    }
+  }
+
+  &__wrapper--small {
+    max-width: 513px;
+    width: 100%;
+
+    @include maxw($lg) {
+      max-width: 991px;
+
+    }
+  }
+
+  &__img,
+  &__img--small {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+
   }
 
   &__name {
@@ -51,18 +108,26 @@
     text-transform: uppercase;
   }
 
-  &__year,
-  &__line {
+  &__year {
     font-weight: 700;
     font-size: 24px;
     line-height: 1.5;
     color: #bbb9b9;
+
+
   }
 
   &__text {
     display: flex;
     gap: 12px;
     align-items: center;
+    flex-wrap: wrap;
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: baseline;
+      gap: 0;
+    }
   }
 
   &__view {
@@ -82,5 +147,7 @@
     border: none;
     border-bottom: 1px solid #000;
     background-color: transparent;
+
+
   }
 }

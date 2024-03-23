@@ -8,25 +8,47 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+
+    @include maxw(900px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__title {
     max-width: 1340px;
     width: 100%;
+
+
   }
 
   &__headline {
     margin-bottom: 90px;
-    font-size: 232px;
+    font-size: clamp(77px, 11vw, 232px);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.1em;
     text-transform: uppercase;
+
+    @include maxw(900px) {
+      margin-bottom: 0;
+    }
+
+
+
+  }
+
+  &__end {
+    font-size: clamp(77px, 11vw, 232px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.1em;
+    text-transform: uppercase;
+
   }
 
   &__subtext {
-    max-width: 197px;
-    font-size: 24px;
+    max-width: clamp(135px, 9vw, 242px);
+    font-size: clamp(16px, 1.25vw, 24px);
     font-weight: 500;
     line-height: 1.2;
   }
@@ -35,11 +57,35 @@
     display: flex;
     align-items: end;
     gap: 10px;
+
+    @include maxw(900px) {
+      max-width: 625px;
+      width: 100%;
+    }
+  }
+
+  &__list--pc {
+    @include maxw(900px) {
+      display: none;
+    }
+  }
+
+  &__list--mob {
+    display: none;
+
+    @include maxw(900px) {
+      max-width: clamp(149px, 46vw, 420px);
+      display: flex;
+      font-weight: 500;
+      font-size: clamp(16px, 5vw, 45px);
+      line-height: 1.2;
+      text-align: right;
+    }
   }
 
   &__slogan {
     font-weight: 700;
-    font-size: 232px;
+    font-size: clamp(77px, 11vw, 232px);
     letter-spacing: -0.04em;
     line-height: 0.6;
     text-transform: uppercase;
@@ -47,7 +93,7 @@
 
   &__item {
     font-weight: 500;
-    font-size: 24px;
+    font-size: clamp(16px, 1.25vw, 24px);
     line-height: 1.2;
     text-align: right;
   }

@@ -11,15 +11,52 @@
 		gap: 20px;
 	}
 
+	&__logo {
+		font-size: clamp(20px, 2.9vw, 33px);
+		text-transform: uppercase;
+
+		@include maxw($sm-pc) {
+			font-size: clamp(20px, 6vw, 56px);
+		}
+	}
+
+	&__btn {
+		display: none;
+		padding: 25px 22px;
+		font-weight: 500;
+		font-size: 33px;
+		color: $whiteColor;
+		line-height: 100%;
+		letter-spacing: -0.05em;
+		text-transform: uppercase;
+		background-color: $blackColor;
+		border: none;
+
+		@include maxw($sm-pc) {
+			display: block;
+
+		}
+
+		@include maxw(510px) {
+			padding: 9px 8px;
+			font-size: 12px;
+
+		}
+	}
+
 	&__list {
 		display: flex;
-		gap: clamp(70px, 12vw, 222px);
+		gap: clamp(180px, 12vw, 222px);
+
+		@include maxw($sm-pc) {
+			display: none;
+		}
 
 		li {
 
 			a,
 			span {
-				font-size: 24px;
+				font-size: clamp(16px, 1.25vw, 24px);
 				font-weight: 700;
 				text-transform: uppercase;
 			}
@@ -43,11 +80,12 @@
 				content: '';
 				position: absolute;
 				right: 0;
-				top: 0;
+				top: 50%;
 				display: block;
 				width: 24px;
 				height: 24px;
 				background-image: url('../../img/icons/header-arrow.svg');
+				transform: translateY(-50%);
 			}
 		}
 	}
