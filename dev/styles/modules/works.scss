@@ -68,7 +68,7 @@
   }
 
   &__wrapper--big {
-    width: clamp(1px, 51.61vw, 911px);
+    width: clamp(1px, 51.56vw, 990px);
 
     @include maxw($sm-pc) {
       width: clamp(1px, 92.44vw, 832px);
