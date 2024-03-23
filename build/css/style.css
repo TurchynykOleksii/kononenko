@@ -301,18 +301,18 @@ form label {
 .header__item--arrow a {
   position: relative;
   display: inline-block;
-  padding-right: 45px;
+  padding-right: clamp(1px, 2.34vw, 45px);
 }
 .header__item--arrow a:after {
   content: "";
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 0;
   display: block;
-  width: 24px;
-  height: 24px;
+  width: clamp(1px, 1.25vw, 24px);
+  height: clamp(1px, 1.25vw, 24px);
   background-image: url("../../img/icons/header-arrow.svg");
-  transform: translateY(-50%);
+  background-size: clamp(1px, 1.25vw, 24px);
 }
 
 .hero {
@@ -1005,26 +1005,26 @@ form label {
   display: inline-block;
   padding-right: clamp(1px, 2.9vw, 56px);
   font-weight: 700;
-  font-size: clamp(1px, 2vw, 39px);
+  font-size: clamp(1px, 1.25vw, 24px);
   text-transform: uppercase;
 }
 @media only screen and (max-width: 900px) {
   .footer__link {
-    font-size: clamp(1px, 2.66vw, 24px);
+    font-size: clamp(1px, 4.33vw, 39px);
   }
 }
 .footer__link:after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: -5px;
   right: 0;
   display: block;
-  width: 32px;
-  height: 33px;
+  width: clamp(1px, 1.71vw, 33px);
+  height: clamp(1px, 1.71vw, 33px);
   background-image: url("../../img/icons/footer-arrow.svg");
   background-position: center;
   background-repeat: no-repeat;
-  transform: translateY(-50%);
+  background-size: clamp(1px, 1.71vw, 33px);
 }
 @media only screen and (max-width: 861px) {
   .footer__link:after {
@@ -1061,7 +1061,7 @@ form label {
 .footer__up {
   position: relative;
   display: inline-block;
-  padding-right: 56px;
+  padding-right: clamp(1px, 2.91vw, 56px);
   font-weight: 700;
   font-size: clamp(1px, 2.66vw, 24px);
   text-transform: uppercase;
@@ -1077,18 +1077,20 @@ form label {
   content: "";
   display: block;
   position: absolute;
-  top: 50%;
+  top: 0;
   right: 0;
-  width: clamp(1px, 1.71vw, 33px);
-  height: clamp(1px, 1.71vw, 33px);
+  width: clamp(1px, 1.66vw, 32px);
+  height: clamp(1px, 1.66vw, 32px);
   background-image: url("../../img/icons/footer-down.svg");
   background-position: center;
   background-repeat: no-repeat;
-  transform: translateY(-50%);
+  background-size: clamp(1px, 1.66vw, 32px);
 }
 @media only screen and (max-width: 900px) {
   .footer__up:after {
+    top: -10px;
     width: clamp(1px, 6.3vw, 57px);
     height: clamp(1px, 6.3vw, 57px);
+    background-size: clamp(1px, 6.3vw, 57px);
   }
 }

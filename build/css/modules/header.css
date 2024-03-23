@@ -55,16 +55,16 @@
 .header__item--arrow a {
   position: relative;
   display: inline-block;
-  padding-right: 45px;
+  padding-right: clamp(1px, 2.34vw, 45px);
 }
 .header__item--arrow a:after {
   content: "";
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 0;
   display: block;
-  width: 24px;
-  height: 24px;
+  width: clamp(1px, 1.25vw, 24px);
+  height: clamp(1px, 1.25vw, 24px);
   background-image: url("../../img/icons/header-arrow.svg");
-  transform: translateY(-50%);
+  background-size: clamp(1px, 1.25vw, 24px);
 }
