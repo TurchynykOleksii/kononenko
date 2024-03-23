@@ -5,43 +5,48 @@
 	padding-bottom: 50px;
 
 	&__title {
-		margin-bottom: 40px;
-		font-size: clamp(143px, 15.25vw, 305px);
+		margin-left: clamp(-20px, -1.04vw, 1px);
+		margin-bottom: clamp(1px, 2.08vw, 40px);
+		font-size: clamp(1px, 15.25vw, 305px);
 		color: $accentColor;
 		text-align: center;
 		line-height: 1;
 		letter-spacing: -0.06em;
 		text-transform: uppercase;
 
-		@include maxw(861px) {
-			font-size: clamp(51px, 15.8vw, 143px);
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(1px, 12.44vw, 112px);
 		}
 	}
 
 	&__list {
-		margin-bottom: 32px;
+
+		margin-bottom: clamp(1px, 1.66vw, 32px);
 		display: flex;
 		justify-content: space-between;
 		gap: 20px;
+
+		@include maxw($sm-pc) {
+			margin-bottom: clamp(1px, 4.66vw, 42px);
+		}
 	}
 
 	&__link {
 		position: relative;
 		display: inline-block;
-		padding-right: 56px;
+		padding-right: clamp(1px, 2.9vw, 56px);
 		font-weight: 700;
-		font-size: clamp(24px, 2vw, 39px);
+		font-size: clamp(1px, 2vw, 39px);
 		text-transform: uppercase;
 
-		@include maxw(861px) {
-			padding-right: 0;
-			font-size: clamp(14px, 5vw, 24px);
+		@include maxw(900px) {
+			font-size: clamp(1px, 2.66vw, 24px);
 		}
 
 		&:after {
 			content: '';
 			position: absolute;
-			top: -3px;
+			top: 50%;
 			right: 0;
 			display: block;
 			width: 32px;
@@ -49,6 +54,7 @@
 			background-image: url('../../img/icons/footer-arrow.svg');
 			background-position: center;
 			background-repeat: no-repeat;
+			transform: translateY(-50%);
 
 			@include maxw(861px) {
 				display: none;
@@ -65,26 +71,25 @@
 	&__copyright {
 
 		font-weight: 400;
-		font-size: 20px;
+		font-size: clamp(1px, 1.04vw, 20px);
 		line-height: 1.4;
 		color: #969696;
 
-		@include maxw(510px) {
-			font-size: 12px;
+		@include maxw($sm-pc) {
+			font-size: clamp(1px, 3.66vw, 33px);
 		}
 
 		span {
 			margin-left: 32px;
-			font-size: 20px;
+			font-size: clamp(1px, 1.04vw, 20px);
 			color: #969696;
 
 			@include maxw($sm-pc) {
 				margin-left: 0;
+				font-size: clamp(1px, 3.66vw, 33px);
 			}
 
-			@include maxw(510px) {
-				font-size: 12px;
-			}
+
 		}
 	}
 
@@ -93,34 +98,31 @@
 		display: inline-block;
 		padding-right: 56px;
 		font-weight: 700;
-		font-size: 24px;
+		font-size: clamp(1px, 2.66vw, 24px);
 		text-transform: uppercase;
 		color: #545454;
 
-		@include maxw(510px) {
-			padding-right: 40px;
-			font-size: 16px;
-		}
-
-		@include maxw(510px) {
-			padding-right: 30px;
+		@include maxw($sm-pc) {
+			padding-right: clamp(1px, 7.5vw, 68px);
+			font-size: clamp(1px, 4.3vw, 39px);
 		}
 
 		&:after {
 			content: '';
 			display: block;
 			position: absolute;
-			top: -5px;
+			top: 50%;
 			right: 0;
-			width: 33px;
-			height: 33px;
+			width: clamp(1px, 1.71vw, 33px);
+			height: clamp(1px, 1.71vw, 33px);
 			background-image: url('../../img/icons/footer-down.svg');
 			background-position: center;
 			background-repeat: no-repeat;
+			transform: translateY(-50%);
 
-			@include maxw(510px) {
-				width: 20px;
-				height: 20px;
+			@include maxw($sm-pc) {
+				width: clamp(1px, 6.3vw, 57px);
+				height: clamp(1px, 6.3vw, 57px);
 			}
 		}
 	}

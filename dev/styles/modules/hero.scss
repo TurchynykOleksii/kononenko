@@ -4,12 +4,7 @@
   padding-top: clamp(1px, 10vw, 192px);
   padding-bottom: clamp(1px, 2.6vw, 50px);
 
-  &__wrapper {
-    max-width: 1920px;
-    padding-left: clamp(1px, 3.125vw, 60px);
-    padding-right: clamp(1px, 3.125vw, 60px);
-    margin: 0 auto;
-  }
+
 
   &__inner {
     display: flex;
@@ -22,10 +17,9 @@
   }
 
   &__title {
+    position: relative;
     max-width: 1340px;
     width: 100%;
-
-
   }
 
   &__headline {
@@ -37,10 +31,13 @@
     letter-spacing: -0.1em;
     text-transform: uppercase;
 
-    @include maxw(900px) {
-      margin-bottom: 0;
-    }
 
+    @include maxw($sm-pc) {
+      margin-bottom: 0;
+      font-size: clamp(1px, 24vw, 216px);
+      display: flex;
+      flex-wrap: wrap;
+    }
 
 
   }
@@ -52,6 +49,9 @@
     letter-spacing: -0.1em;
     text-transform: uppercase;
 
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 24vw, 216px);
+    }
   }
 
   &__subtext {
@@ -59,6 +59,14 @@
     font-size: clamp(16px, 1.25vw, 24px);
     font-weight: 500;
     line-height: 1.2;
+
+    @include maxw($sm-pc) {
+      position: absolute;
+      right: 0;
+      bottom: clamp(1px, 2.66vw, 24px);
+      max-width: clamp(135px, 35vw, 322px);
+      font-size: clamp(1px, 5vw, 45px);
+    }
   }
 
   &__services {
@@ -67,14 +75,13 @@
     align-items: end;
     gap: 10px;
 
-    @include maxw(900px) {
-      max-width: 625px;
-      width: 100%;
+    @include maxw($sm-pc) {
+      margin-left: 0;
     }
   }
 
   &__list--pc {
-    @include maxw(900px) {
+    @include maxw($sm-pc) {
       display: none;
     }
   }
@@ -82,22 +89,27 @@
   &__list--mob {
     display: none;
 
-    @include maxw(900px) {
+    @include maxw($sm-pc) {
       max-width: clamp(149px, 46vw, 420px);
       display: flex;
       font-weight: 500;
-      font-size: clamp(16px, 5vw, 45px);
+      font-size: clamp(1px, 5vw, 45px);
       line-height: 1.2;
       text-align: right;
     }
   }
 
   &__slogan {
+    margin-bottom: clamp(-20px, -1.04vw, 1px);
     font-weight: 700;
     font-size: clamp(1px, 12vw, 232px);
     letter-spacing: -0.01em;
     line-height: 0.8;
     text-transform: uppercase;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 24vw, 216px);
+    }
   }
 
   &__item {

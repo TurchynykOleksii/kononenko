@@ -1,31 +1,39 @@
 @import "../core";
 
 .works {
-  padding-top: 50px;
-  padding-bottom: 123px;
+  padding-top: clamp(1px, 2.6vw, 50px);
+  padding-bottom: clamp(1px, 6.4vw, 123px);
+
+  @include maxw($sm-pc) {
+    padding-top: clamp(1px, 28.88vw, 260px);
+    padding-bottom: clamp(1px, 30.11vw, 271px);
+  }
 
   &__title {
-    margin-bottom: 60px;
+    margin-bottom: clamp(1px, 3.12vw, 60px);
     font-weight: 700;
-    font-size: 50px;
+    font-size: clamp(1px, 2.6vw, 50px);
     color: $accentColor;
-    line-height: 90%;
+    line-height: 0.9;
     letter-spacing: -0.05em;
     text-transform: uppercase;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 10vw, 90px);
+    }
   }
 
   &__list {
-    margin-bottom: 200px;
+    margin-bottom: clamp(1px, 10.41vw, 200px);
     display: flex;
     flex-wrap: wrap;
-    gap: 200px 0;
+    gap: clamp(1px, 10.41vw, 200px) 0;
 
     @include maxw($sm-pc) {
-      gap: 168px;
-    }
-
-    @include maxw($mob) {
-      margin-bottom: 60px;
+      margin-bottom: clamp(1px, 18.66vw, 168px);
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1px, 18.66vw, 168px);
     }
   }
 
@@ -33,17 +41,22 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 200px;
+    gap: clamp(1px, 15.36vw, 295px);
 
-    @include maxw($lg) {
-      flex-wrap: wrap;
-      gap: 168px;
-      justify-content: center;
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1px, 18.66vw, 168px);
     }
   }
 
   &__item--reverse {
     flex-direction: row-reverse;
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__wrapper {
@@ -55,9 +68,10 @@
   }
 
   &__wrapper--big {
+    width: clamp(1px, 51.61vw, 911px);
+
     @include maxw($sm-pc) {
-      max-width: 991px;
-      width: 100%;
+      width: clamp(1px, 92.44vw, 832px);
     }
   }
 
@@ -67,33 +81,16 @@
     gap: 10px;
   }
 
-  &__img {
-    max-width: 991px;
-    max-height: 900px;
-  }
-
-  &__img--small {
-
-    @include maxw(920px) {
-      max-width: 991px;
-      max-height: 900px;
-    }
-  }
-
   &__wrapper--small {
-    max-width: 513px;
-    width: 100%;
+    width: clamp(1px, 26.71vw, 513px);
 
-    @include maxw($lg) {
-      max-width: 991px;
-
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.44vw, 832px);
     }
   }
 
   &__img,
   &__img--small {
-    width: 100%;
-    overflow: hidden;
 
     img {
       object-fit: cover;
@@ -101,25 +98,33 @@
 
   }
 
-  &__name {
-    font-size: 24px;
+  &__name,
+  &__year {
+    font-size: clamp(1px, 1.25vw, 24px);
     line-height: 1.5;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 5vw, 45px);
+    }
+  }
+
+  &__name {
     letter-spacing: -0.03em;
     text-transform: uppercase;
   }
 
   &__year {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 1.5;
     color: #bbb9b9;
 
-
+    @include maxw($sm-pc) {
+      margin-top: -8px clamp(-8px, -5vw, 1px);
+    }
   }
 
   &__text {
     display: flex;
-    gap: 12px;
+    gap: clamp(1px, 0.62vw, 12px);
     align-items: center;
     flex-wrap: wrap;
 
@@ -132,8 +137,12 @@
 
   &__view {
     font-weight: 400;
-    font-size: 22px;
+    font-size: clamp(1px, 1.14vw, 22px);
     line-height: 1.4;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 4.33vw, 39px);
+    }
   }
 
   &__more {
@@ -141,13 +150,16 @@
     padding: 0px 0px 4px 0px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 24px;
+    font-size: clamp(16px, 1.25vw, 24px);
     font-weight: 700;
     text-transform: uppercase;
     border: none;
     border-bottom: 1px solid #000;
     background-color: transparent;
 
+    @include maxw($sm-pc) {
+      font-size: clamp(16px, 3.66vw, 33px);
+    }
 
   }
 }

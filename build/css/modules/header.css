@@ -9,19 +9,19 @@
   gap: 20px;
 }
 .header__logo {
-  font-size: clamp(20px, 2.9vw, 33px);
+  font-size: clamp(1px, 2.9vw, 33px);
   text-transform: uppercase;
 }
 @media only screen and (max-width: 900px) {
   .header__logo {
-    font-size: clamp(20px, 6vw, 56px);
+    font-size: clamp(1px, 6vw, 56px);
   }
 }
 .header__btn {
   display: none;
-  padding: 25px 22px;
+  padding: clamp(1px, 2.44vw, 22px) clamp(1px, 2.77vw, 25px);
   font-weight: 500;
-  font-size: 33px;
+  font-size: clamp(1px, 3.6vw, 33px);
   color: #fff;
   line-height: 100%;
   letter-spacing: -0.05em;
@@ -34,15 +34,9 @@
     display: block;
   }
 }
-@media only screen and (max-width: 510px) {
-  .header__btn {
-    padding: 9px 8px;
-    font-size: 12px;
-  }
-}
 .header__list {
   display: flex;
-  gap: clamp(180px, 12vw, 222px);
+  gap: clamp(1px, 12vw, 222px);
 }
 @media only screen and (max-width: 900px) {
   .header__list {
@@ -51,7 +45,7 @@
 }
 .header__list li a,
 .header__list li span {
-  font-size: clamp(16px, 1.25vw, 24px);
+  font-size: clamp(1px, 1.25vw, 24px);
   font-weight: 700;
   text-transform: uppercase;
 }

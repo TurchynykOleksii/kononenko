@@ -1,57 +1,74 @@
 .works {
-  padding-top: 50px;
-  padding-bottom: 123px;
+  padding-top: clamp(1px, 2.6vw, 50px);
+  padding-bottom: clamp(1px, 6.4vw, 123px);
+}
+@media only screen and (max-width: 900px) {
+  .works {
+    padding-top: clamp(1px, 28.88vw, 260px);
+    padding-bottom: clamp(1px, 30.11vw, 271px);
+  }
 }
 .works__title {
-  margin-bottom: 60px;
+  margin-bottom: clamp(1px, 3.12vw, 60px);
   font-weight: 700;
-  font-size: 50px;
+  font-size: clamp(1px, 2.6vw, 50px);
   color: #902908;
-  line-height: 90%;
+  line-height: 0.9;
   letter-spacing: -0.05em;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 900px) {
+  .works__title {
+    font-size: clamp(1px, 10vw, 90px);
+  }
+}
 .works__list {
-  margin-bottom: 200px;
+  margin-bottom: clamp(1px, 10.41vw, 200px);
   display: flex;
   flex-wrap: wrap;
-  gap: 200px 0;
+  gap: clamp(1px, 10.41vw, 200px) 0;
 }
 @media only screen and (max-width: 900px) {
   .works__list {
-    gap: 168px;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .works__list {
-    margin-bottom: 60px;
+    margin-bottom: clamp(1px, 18.66vw, 168px);
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1px, 18.66vw, 168px);
   }
 }
 .works__item {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 200px;
+  gap: clamp(1px, 15.36vw, 295px);
 }
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 900px) {
   .works__item {
-    flex-wrap: wrap;
-    gap: 168px;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1px, 18.66vw, 168px);
   }
 }
 .works__item--reverse {
   flex-direction: row-reverse;
+}
+@media only screen and (max-width: 900px) {
+  .works__item--reverse {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .works__wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+.works__wrapper--big {
+  width: clamp(1px, 51.61vw, 911px);
+}
 @media only screen and (max-width: 900px) {
   .works__wrapper--big {
-    max-width: 991px;
-    width: 100%;
+    width: clamp(1px, 92.44vw, 832px);
   }
 }
 .works__info {
@@ -59,47 +76,42 @@
   justify-content: space-between;
   gap: 10px;
 }
-.works__img {
-  max-width: 991px;
-  max-height: 900px;
-}
-@media only screen and (max-width: 920px) {
-  .works__img--small {
-    max-width: 991px;
-    max-height: 900px;
-  }
-}
 .works__wrapper--small {
-  max-width: 513px;
-  width: 100%;
+  width: clamp(1px, 26.71vw, 513px);
 }
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 900px) {
   .works__wrapper--small {
-    max-width: 991px;
+    width: clamp(1px, 92.44vw, 832px);
   }
-}
-.works__img, .works__img--small {
-  width: 100%;
-  overflow: hidden;
 }
 .works__img img, .works__img--small img {
   object-fit: cover;
 }
-.works__name {
-  font-size: 24px;
+.works__name, .works__year {
+  font-size: clamp(1px, 1.25vw, 24px);
   line-height: 1.5;
+}
+@media only screen and (max-width: 900px) {
+  .works__name, .works__year {
+    font-size: clamp(1px, 5vw, 45px);
+  }
+}
+.works__name {
   letter-spacing: -0.03em;
   text-transform: uppercase;
 }
 .works__year {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 1.5;
   color: #bbb9b9;
+}
+@media only screen and (max-width: 900px) {
+  .works__year {
+    margin-top: -8px clamp(-8px, -5vw, 1px);
+  }
 }
 .works__text {
   display: flex;
-  gap: 12px;
+  gap: clamp(1px, 0.62vw, 12px);
   align-items: center;
   flex-wrap: wrap;
 }
@@ -112,18 +124,28 @@
 }
 .works__view {
   font-weight: 400;
-  font-size: 22px;
+  font-size: clamp(1px, 1.14vw, 22px);
   line-height: 1.4;
+}
+@media only screen and (max-width: 900px) {
+  .works__view {
+    font-size: clamp(1px, 4.33vw, 39px);
+  }
 }
 .works__more {
   display: block;
   padding: 0px 0px 4px 0px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 24px;
+  font-size: clamp(16px, 1.25vw, 24px);
   font-weight: 700;
   text-transform: uppercase;
   border: none;
   border-bottom: 1px solid #000;
   background-color: transparent;
+}
+@media only screen and (max-width: 900px) {
+  .works__more {
+    font-size: clamp(16px, 3.66vw, 33px);
+  }
 }

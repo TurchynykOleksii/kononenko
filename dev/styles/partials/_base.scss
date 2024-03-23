@@ -55,14 +55,10 @@ img {
 }
 
 .wrapper {
-  max-width: 1800px;
-  width: 100%;
+  max-width: 1920px;
+  padding-left: clamp(1px, 3.125vw, 60px);
+  padding-right: clamp(1px, 3.125vw, 60px);
   margin: 0 auto;
-  padding: 0 10px;
-
-  @include maxw(510px) {
-    padding: 0 5px;
-  }
 }
 
 //===========================
