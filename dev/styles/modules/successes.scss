@@ -1,7 +1,13 @@
 @import "../core";
 
 .successes {
-  padding-top: 35px;
+  padding-top: clamp(1px, 1.82vw, 35px);
+
+  @include maxw($sm-pc) {
+
+    padding-top: clamp(1px, 15.55vw, 140px);
+    padding-bottom: clamp(1px, 15.55vw, 140px);
+  }
 
   &__inner {
     display: flex;
@@ -13,18 +19,27 @@
   &__exhibitions,
   &__brands {
     display: flex;
+
+    @include maxw($sm-pc) {
+
+      flex-direction: column;
+    }
   }
 
   &__headline {
-    max-width: 725px;
-    width: 100%;
+    width: clamp(1px, 37.76vw, 725px);
     flex-shrink: 0;
     font-weight: 700;
-    font-size: 50px;
+    font-size: clamp(1px, 2.6vw, 50px);
     color: $accentColor;
     line-height: 0.9;
     letter-spacing: -0.05em;
     text-transform: uppercase;
+
+    @include maxw($sm-pc) {
+      margin-bottom: clamp(1px, 12.44vw, 112px);
+      font-size: clamp(1px, 10vw, 90px);
+    }
   }
 }
 
@@ -32,27 +47,42 @@
 
   &__year,
   &__city {
-    font-size: 22px;
+    font-size: clamp(1px, 1.14vw, 22px);
     line-height: 140%;
     color: #545454;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 4.33vw, 39px);
+    }
   }
 
   &__year {
-    margin-right: 40px;
+    margin-right: clamp(1px, 2.08vw, 40px);
+
+    @include maxw($sm-pc) {
+      margin-right: clamp(1px, 3.66vw, 33px);
+    }
   }
 
   &__city {
     display: block;
-    max-width: 160px;
-    width: 100%;
+    width: clamp(1px, 8.33vw, 160px);
     flex-shrink: 0;
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 18.66vw, 168px);
+    }
   }
 
   &__list {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: clamp(1px, 0.72vw, 14px);
+
+    @include maxw($sm-pc) {
+      gap: clamp(1px, 3.66vw, 33px);
+    }
   }
 
   &__item {
@@ -60,29 +90,44 @@
   }
 
   &__info {
-    max-width: 770px;
-    width: 100%;
-    margin-right: 20px;
+    width: clamp(1px, 40.1vw, 770px);
+    margin-right: clamp(1px, 1.04vw, 20px);
     display: flex;
-    gap: 30px;
+    gap: clamp(1px, 1.56vw, 30px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 57.77vw, 520px);
+      margin-right: clamp(1px, 2.33vw, 21px);
+      flex-direction: column;
+      gap: clamp(1px, 1.22vw, 11px);
+    }
 
     span {
       &:first-child {
         display: block;
-        max-width: 416px;
-        width: 100%;
+        width: clamp(1px, 21.66vw, 416px);
         font-weight: 500;
-        font-size: 22px;
-        line-height: 150%;
+        font-size: clamp(1px, 1.14vw, 22px);
+        line-height: 1.5;
         text-transform: uppercase;
+
+        @include maxw($sm-pc) {
+          width: clamp(1px, 57.77vw, 520px);
+          font-size: clamp(1px, 4.33vw, 39px);
+        }
       }
 
       &:last-child {
-        max-width: 325px;
-        width: 100%;
+        width: clamp(1px, 17.81vw, 342px);
         display: block;
-        font-size: 22px;
+        font-size: clamp(1px, 1.14vw, 22px);
         line-height: 1.4;
+
+        @include maxw($sm-pc) {
+          width: clamp(1px, 57.77vw, 520px);
+          font-size: clamp(1px, 4.33vw, 39px);
+          line-height: 1.5;
+        }
       }
     }
   }
@@ -92,7 +137,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: clamp(1px, 0.72vw, 14px);
+
+  @include maxw($sm-pc) {
+    gap: clamp(1px, 3.66vw, 33px);
+  }
 
   &__item {
     display: flex;
@@ -100,35 +149,51 @@
 
   &__year,
   &__city {
-    font-size: 22px;
-    line-height: 140%;
+    font-size: clamp(1px, 1.14vw, 22px);
+    line-height: 1.4;
     color: #545454;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 4.33vw, 39px);
+    }
   }
 
   &__year {
-    margin-right: 40px;
+    margin-right: clamp(1px, 2.08vw, 40px);
+
+    @include maxw($sm-pc) {
+      margin-right: clamp(1px, 3.66vw, 33px);
+    }
   }
 
   &__city {
     display: block;
-    max-width: 160px;
-    width: 100%;
+    width: clamp(1px, 8.33vw, 160px);
     flex-shrink: 0;
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 18.66vw, 168px);
+    }
   }
 
   &__info {
-    margin-right: 20px;
-    max-width: 770px;
-    width: 100%;
+    margin-right: clamp(1px, 1.04vw, 20px);
+    width: clamp(1px, 40.1vw, 770px);
     font-weight: 500;
-    font-size: 22px;
-    line-height: 150%;
+    font-size: clamp(1px, 1.14vw, 22px);
+    line-height: 1.5;
     text-transform: uppercase;
+
+    @include maxw($sm-pc) {
+      margin-right: clamp(1px, 3.66vw, 33px);
+      width: clamp(1px, 57.77vw, 520px);
+      font-size: clamp(1px, 4.33vw, 39px);
+    }
   }
 }
 
 .successes__brands {
-  margin-bottom: 200px;
+  margin-bottom: clamp(1px, 10.41vw, 200px);
 }
 
 .brands {
@@ -136,14 +201,22 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 95px;
+    gap: clamp(1px, 0.62vw, 12px) clamp(1px, 4.94vw, 95px);
+
+    @include maxw($sm-pc) {
+      gap: clamp(1px, 0.88vw, 8px) clamp(1px, 3.66vw, 33px);
+    }
   }
 
   &__item {
-    max-width: 197px;
-    width: 100%;
+    width: clamp(1px, 10.26vw, 197px);
     flex-shrink: 0;
-    font-size: 22px;
+    font-size: clamp(1px, 1.14vw, 22px);
     line-height: 1.4;
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 43.66vw, 393px);
+      font-size: clamp(1px, 4.33vw, 39px);
+    }
   }
 }
