@@ -19,6 +19,7 @@
     text-transform: uppercase;
 
     @include maxw($sm-pc) {
+      margin-bottom: clamp(1px, 12.44vw, 112px);
       font-size: clamp(1px, 10vw, 90px);
     }
   }

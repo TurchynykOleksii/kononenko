@@ -7,7 +7,7 @@
 	&__title {
 		margin-left: clamp(-20px, -1.04vw, 1px);
 		margin-bottom: clamp(1px, 2.08vw, 40px);
-		font-size: clamp(1px, 15.25vw, 305px);
+		font-size: clamp(1px, 16.66vw, 320px);
 		color: $accentColor;
 		text-align: center;
 		line-height: 1;
@@ -15,7 +15,7 @@
 		text-transform: uppercase;
 
 		@include maxw($sm-pc) {
-			margin-bottom: clamp(1px, 12.44vw, 112px);
+			margin-bottom: clamp(1px, 15.88vw, 143px);
 		}
 	}
 

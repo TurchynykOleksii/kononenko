@@ -23,7 +23,7 @@
 }
 @media only screen and (max-width: 900px) {
   .form__title-first {
-    width: clamp(1px, 92.44vw, 832px);
+    width: clamp(1px, 72.11vw, 649px);
     text-align: left;
   }
 }

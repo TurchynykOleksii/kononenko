@@ -47,7 +47,7 @@
   }
 }
 .hero__subtext {
-  max-width: clamp(135px, 9vw, 242px);
+  width: clamp(135px, 9vw, 242px);
   font-size: clamp(16px, 1.25vw, 24px);
   font-weight: 500;
   line-height: 1.2;
@@ -55,9 +55,9 @@
 @media only screen and (max-width: 900px) {
   .hero__subtext {
     position: absolute;
-    right: 0;
+    right: clamp(1px, 2.22vw, 20px);
     bottom: clamp(1px, 2.66vw, 24px);
-    max-width: clamp(135px, 35vw, 322px);
+    width: clamp(1px, 41.44vw, 373px);
     font-size: clamp(1px, 5vw, 45px);
   }
 }
@@ -82,7 +82,7 @@
 }
 @media only screen and (max-width: 900px) {
   .hero__list--mob {
-    max-width: clamp(149px, 46vw, 420px);
+    max-width: clamp(1px, 46.66vw, 420px);
     display: flex;
     font-weight: 500;
     font-size: clamp(1px, 5vw, 45px);
@@ -91,11 +91,10 @@
   }
 }
 .hero__slogan {
-  margin-bottom: clamp(-20px, -1.04vw, 1px);
   font-weight: 700;
   font-size: clamp(1px, 12vw, 232px);
-  letter-spacing: -0.01em;
-  line-height: 0.8;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
   text-transform: uppercase;
 }
 @media only screen and (max-width: 900px) {

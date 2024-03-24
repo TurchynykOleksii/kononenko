@@ -1,21 +1,21 @@
 @font-face {
   font-family: Noto;
   font-display: swap;
-  src: url("../fonts/NotoSansKR-Regular-Alphabetic.woff2") format("woff2"), url("../fonts/NotoSansKR-Regular-Alphabetic.woff") format("woff");
+  src: url("../fonts/NotoSansKR-Regular.woff2") format("woff2"), url("../fonts/NotoSansKR-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: Noto;
   font-display: swap;
-  src: url("../fonts/NotoSansKR-Medium-Alphabetic.woff2") format("woff2"), url("../fonts/NotoSansKR-Medium-Alphabetic.woff") format("woff");
+  src: url("../fonts/NotoSansKR-Medium.woff2") format("woff2"), url("../fonts/NotoSansKR-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: Noto;
   font-display: swap;
-  src: url("../fonts/NotoSansKR-Bold-Alphabetic.woff2") format("woff2"), url("../fonts/NotoSansKR-Bold-Alphabetic.woff") format("woff");
+  src: url("../fonts/NotoSansKR-Bold.woff2") format("woff2"), url("../fonts/NotoSansKR-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -364,7 +364,7 @@ form label {
   }
 }
 .hero__subtext {
-  max-width: clamp(135px, 9vw, 242px);
+  width: clamp(135px, 9vw, 242px);
   font-size: clamp(16px, 1.25vw, 24px);
   font-weight: 500;
   line-height: 1.2;
@@ -372,9 +372,9 @@ form label {
 @media only screen and (max-width: 900px) {
   .hero__subtext {
     position: absolute;
-    right: 0;
+    right: clamp(1px, 2.22vw, 20px);
     bottom: clamp(1px, 2.66vw, 24px);
-    max-width: clamp(135px, 35vw, 322px);
+    width: clamp(1px, 41.44vw, 373px);
     font-size: clamp(1px, 5vw, 45px);
   }
 }
@@ -399,7 +399,7 @@ form label {
 }
 @media only screen and (max-width: 900px) {
   .hero__list--mob {
-    max-width: clamp(149px, 46vw, 420px);
+    max-width: clamp(1px, 46.66vw, 420px);
     display: flex;
     font-weight: 500;
     font-size: clamp(1px, 5vw, 45px);
@@ -408,11 +408,10 @@ form label {
   }
 }
 .hero__slogan {
-  margin-bottom: clamp(-20px, -1.04vw, 1px);
   font-weight: 700;
   font-size: clamp(1px, 12vw, 232px);
-  letter-spacing: -0.01em;
-  line-height: 0.8;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
   text-transform: uppercase;
 }
 @media only screen and (max-width: 900px) {
@@ -448,6 +447,7 @@ form label {
 }
 @media only screen and (max-width: 900px) {
   .works__title {
+    margin-bottom: clamp(1px, 12.44vw, 112px);
     font-size: clamp(1px, 10vw, 90px);
   }
 }
@@ -604,7 +604,7 @@ form label {
 }
 @media only screen and (max-width: 900px) {
   .form__title-first {
-    width: clamp(1px, 92.44vw, 832px);
+    width: clamp(1px, 72.11vw, 649px);
     text-align: left;
   }
 }
@@ -977,7 +977,7 @@ form label {
 .footer__title {
   margin-left: clamp(-20px, -1.04vw, 1px);
   margin-bottom: clamp(1px, 2.08vw, 40px);
-  font-size: clamp(1px, 15.25vw, 305px);
+  font-size: clamp(1px, 16.66vw, 320px);
   color: #902908;
   text-align: center;
   line-height: 1;
@@ -986,7 +986,7 @@ form label {
 }
 @media only screen and (max-width: 900px) {
   .footer__title {
-    margin-bottom: clamp(1px, 12.44vw, 112px);
+    margin-bottom: clamp(1px, 15.88vw, 143px);
   }
 }
 .footer__list {
