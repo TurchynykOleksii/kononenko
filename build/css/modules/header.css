@@ -1,6 +1,9 @@
 .header {
+  position: relative;
   padding-top: clamp(1px, 1.19vw, 23px);
   padding-bottom: clamp(1px, 1.19vw, 23px);
+  z-index: 3;
+  background-color: #fff;
 }
 @media only screen and (max-width: 900px) {
   .header {
@@ -26,19 +29,22 @@
 .header__btn {
   display: none;
   padding: clamp(1px, 2.44vw, 22px) clamp(1px, 2.77vw, 25px);
+  background-color: #000;
+  border: none;
+}
+@media only screen and (max-width: 900px) {
+  .header__btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+.header__btn-text {
   font-weight: 500;
   font-size: clamp(1px, 3.6vw, 33px);
   color: #fff;
   line-height: 100%;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  background-color: #000;
-  border: none;
-}
-@media only screen and (max-width: 900px) {
-  .header__btn {
-    display: block;
-  }
 }
 .header__list {
   display: flex;
@@ -54,6 +60,11 @@
   font-size: clamp(1px, 1.25vw, 24px);
   font-weight: 700;
   text-transform: uppercase;
+}
+.header__btn-icon {
+  display: none;
+  width: clamp(1px, 3.55vw, 32px);
+  height: clamp(1px, 3.55vw, 32px);
 }
 .header__item--active a {
   color: #902908;

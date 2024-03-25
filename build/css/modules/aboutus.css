@@ -156,10 +156,33 @@
   display: flex;
   flex-direction: column;
   gap: clamp(1px, 1.56vw, 30px);
+  transition: height 1s ease;
+}
+@media only screen and (max-width: 900px) {
+  .slogan.slogan__hide {
+    height: clamp(1px, 57.22vw, 515px);
+    overflow: hidden;
+  }
+}
+.slogan__toggle {
+  align-self: center;
+  display: none;
+  background: transparent;
+  border: none;
+  font-weight: 400;
+  font-size: clamp(1px, 4.33vw, 39px);
+  line-height: 1.5;
+  border-bottom: 2px solid #000;
+}
+@media only screen and (max-width: 900px) {
+  .slogan__toggle {
+    display: inline-block;
+  }
 }
 @media only screen and (max-width: 900px) {
   .slogan {
     width: clamp(1px, 93.66vw, 843px);
+    margin-bottom: clamp(1px, 6.22vw, 56px);
   }
 }
 .slogan__title {

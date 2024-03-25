@@ -1,8 +1,11 @@
 @import "../core";
 
 .header {
+	position: relative;
 	padding-top: clamp(1px, 1.19vw, 23px);
 	padding-bottom: clamp(1px, 1.19vw, 23px);
+	z-index: 3;
+	background-color: $whiteColor;
 
 	@include maxw($sm-pc) {
 		padding-top: clamp(1px, 6.22vw, 56px);
@@ -28,18 +31,24 @@
 	&__btn {
 		display: none;
 		padding: clamp(1px, 2.44vw, 22px) clamp(1px, 2.77vw, 25px);
+
+		background-color: $blackColor;
+		border: none;
+
+		@include maxw($sm-pc) {
+			display: flex;
+			justify-content: center;
+
+		}
+	}
+
+	&__btn-text {
 		font-weight: 500;
 		font-size: clamp(1px, 3.6vw, 33px);
 		color: $whiteColor;
 		line-height: 100%;
 		letter-spacing: -0.05em;
 		text-transform: uppercase;
-		background-color: $blackColor;
-		border: none;
-
-		@include maxw($sm-pc) {
-			display: block;
-		}
 	}
 
 	&__list {
@@ -59,6 +68,12 @@
 				text-transform: uppercase;
 			}
 		}
+	}
+
+	&__btn-icon {
+		display: none;
+		width: clamp(1px, 3.55vw, 32px);
+		height: clamp(1px, 3.55vw, 32px);
 	}
 
 	&__item--active {

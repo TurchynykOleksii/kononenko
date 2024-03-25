@@ -23,7 +23,6 @@
 			<div class="header__inner">
 				<a href="/" class="header__logo">
 					kon<strong>one</strong>nko
-
 				</a>
 
 				<nav class="header__menu">
@@ -35,13 +34,18 @@
 							<a href="#">works</a>
 						</li>
 						<li class="header__item header__item--arrow">
-							<a href="#">
+							<a href="#contacts">
 								contact us
 							</a>
 						</li>
 					</ul>
 				</nav>
-				<button class="header__btn">Menu</button>
+				<button class="header__btn">
+					<span class="header__btn-text">Menu</span>
+					<svg class="header__btn-icon" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.5 5L5.5 15" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
+						<path d="M5.5 5L15.5 15" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
+					</svg></button>
 			</div>
 		</div>
 	</header>
@@ -93,7 +97,7 @@
             </p>
           </li>
         </ul>
-        <div class="slogan">
+        <div class="slogan slogan__hide">
           <h4 class="slogan__title">Our ideology and slogan</h4>
           <p>"The art of transforming ideas into form!", guide our work. In our projects, we aim to invest our unique
             vision, predict
@@ -112,6 +116,7 @@
             among
             colleagues.</p>
         </div>
+        <button class="slogan__toggle">View all</button>
         <div class="follow">
           <h4 class="follow__title">follow us</h4>
           <ul class="follow__list">
@@ -424,7 +429,7 @@
 </section>
 </main>
 
-<footer class="footer">
+<footer class="footer" id="contacts">
 	<div class="wrapper">
 		<div class="footer__inner">
 			<nav class="footer__nav">
@@ -450,6 +455,35 @@
 			</div>
 		</div>
 
+	</div>
+	<div class="mobile-menu">
+		<ul class="mobile-menu__list">
+			<li class="mobile-menu__item">
+				<a href="about.html">about</a>
+			</li>
+			<li class="mobile-menu__item">
+				<a href="#">works</a>
+			</li>
+			<li class="mobile-menu__item">
+				<a href="#contacts">
+					contact
+				</a>
+			</li>
+		</ul>
+		<ul class="mobile-menu__social">
+			<li class="mobile-menu__link">
+				<a href="#"><strong>follow us</strong></a>
+			</li>
+			<li class="mobile-menu__link">
+				<a href="#">Behance</a>
+			</li>
+			<li class="mobile-menu__link">
+				<a href="#">Instagram</a>
+			</li>
+			<li class="mobile-menu__link">
+				<a href="#">Facebook</a>
+			</li>
+		</ul>
 	</div>
 </footer>
 
