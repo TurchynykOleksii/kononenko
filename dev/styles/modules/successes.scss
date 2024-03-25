@@ -12,7 +12,11 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: clamp(1px, 5.2vw, 100px);
+
+    @include maxw($sm-pc) {
+      gap: clamp(1px, 18.66vw, 168px);
+    }
   }
 
   &__awards,

@@ -245,8 +245,14 @@ form label {
 }
 
 .header {
-  padding-top: 23px;
-  padding-bottom: 23px;
+  padding-top: clamp(1px, 1.19vw, 23px);
+  padding-bottom: clamp(1px, 1.19vw, 23px);
+}
+@media only screen and (max-width: 900px) {
+  .header {
+    padding-top: clamp(1px, 6.22vw, 56px);
+    padding-bottom: clamp(1px, 6.22vw, 56px);
+  }
 }
 .header__inner {
   display: flex;
@@ -936,9 +942,19 @@ form label {
   display: flex;
   gap: clamp(1px, 0.62vw, 12px);
 }
+@media only screen and (max-width: 900px) {
+  .breadcrumbs {
+    margin-bottom: clamp(1px, 15.55vw, 140px);
+  }
+}
 .breadcrumbs__item {
   font-size: clamp(1px, 0.83vw, 16px);
   line-height: 1.5;
+}
+@media only screen and (max-width: 900px) {
+  .breadcrumbs__item {
+    font-size: clamp(1px, 3.11vw, 28px);
+  }
 }
 .breadcrumbs__item:last-child {
   color: #969696;
@@ -956,7 +972,12 @@ form label {
 .successes__inner {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: clamp(1px, 5.2vw, 100px);
+}
+@media only screen and (max-width: 900px) {
+  .successes__inner {
+    gap: clamp(1px, 18.66vw, 168px);
+  }
 }
 .successes__awards, .successes__exhibitions, .successes__brands {
   display: flex;

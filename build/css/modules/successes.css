@@ -10,7 +10,12 @@
 .successes__inner {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: clamp(1px, 5.2vw, 100px);
+}
+@media only screen and (max-width: 900px) {
+  .successes__inner {
+    gap: clamp(1px, 18.66vw, 168px);
+  }
 }
 .successes__awards, .successes__exhibitions, .successes__brands {
   display: flex;

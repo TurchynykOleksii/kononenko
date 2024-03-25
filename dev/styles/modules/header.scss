@@ -1,8 +1,13 @@
 @import "../core";
 
 .header {
-	padding-top: 23px;
-	padding-bottom: 23px;
+	padding-top: clamp(1px, 1.19vw, 23px);
+	padding-bottom: clamp(1px, 1.19vw, 23px);
+
+	@include maxw($sm-pc) {
+		padding-top: clamp(1px, 6.22vw, 56px);
+		padding-bottom: clamp(1px, 6.22vw, 56px);
+	}
 
 	&__inner {
 		display: flex;

@@ -7,7 +7,6 @@
   padding-bottom: 35px;
 
   @include maxw($sm-pc) {
-
     padding-bottom: clamp(1px, 15.55vw, 140px);
   }
 
@@ -248,9 +247,17 @@
   display: flex;
   gap: clamp(1px, 0.62vw, 12px);
 
+  @include maxw($sm-pc) {
+    margin-bottom: clamp(1px, 15.55vw, 140px);
+  }
+
   &__item {
     font-size: clamp(1px, 0.83vw, 16px);
     line-height: 1.5;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 3.11vw, 28px);
+    }
 
     &:last-child {
       color: #969696;

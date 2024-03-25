@@ -234,9 +234,19 @@
   display: flex;
   gap: clamp(1px, 0.62vw, 12px);
 }
+@media only screen and (max-width: 900px) {
+  .breadcrumbs {
+    margin-bottom: clamp(1px, 15.55vw, 140px);
+  }
+}
 .breadcrumbs__item {
   font-size: clamp(1px, 0.83vw, 16px);
   line-height: 1.5;
+}
+@media only screen and (max-width: 900px) {
+  .breadcrumbs__item {
+    font-size: clamp(1px, 3.11vw, 28px);
+  }
 }
 .breadcrumbs__item:last-child {
   color: #969696;
