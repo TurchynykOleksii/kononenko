@@ -107,3 +107,33 @@ nameInput.addEventListener('blur', checkNameValid);
 phoneInput.addEventListener('blur', checkPhoneValid);
 emailInput.addEventListener('blur', checkEmailValid);
 formEl.addEventListener('submit', onFormSubmit);
+
+//chech scroll position
+document.addEventListener('DOMContentLoaded', function () {
+  const worksList = document.querySelector('.works__list');
+
+  if (worksList) {
+    let scrollHeight = 0;
+    let scrollTimeout = null;
+
+    if (sessionStorage.getItem('scrollHeight')) {
+      scrollHeight = parseInt(sessionStorage.getItem('scrollHeight'), 10);
+      window.scrollTo(0, scrollHeight);
+      sessionStorage.removeItem('scrollHeight');
+    }
+
+    window.addEventListener('scroll', function () {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      scrollTimeout = setTimeout(function () {
+        scrollHeight = window.scrollY;
+        console.log('Скролл остановлен, сохраняем позицию:', scrollHeight);
+        sessionStorage.setItem('scrollHeight', scrollHeight.toString());
+      }, 1000);
+    });
+  } else {
+    console.log('Элемент .works__list не найден на странице.');
+  }
+});
