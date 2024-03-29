@@ -1857,8 +1857,11 @@ form label {
   }
 }
 .footer__title {
+  position: relative;
+  z-index: -1;
   margin-left: clamp(-20px, -1.04vw, 1px);
   margin-bottom: clamp(1px, 2.08vw, 40px);
+  margin-top: clamp(-62px, -3.23vw, 1px);
   font-size: clamp(1px, 16.66vw, 320px);
   color: #902908;
   text-align: center;
