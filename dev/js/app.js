@@ -29,6 +29,9 @@ function lessMoreText() {
   }
 }
 
+mobileBtn?.addEventListener('click', toggleMenu);
+toggleMoreText?.addEventListener('click', lessMoreText);
+
 const nameInput = document.querySelector('.form__input[name="name"]');
 const phoneInput = document.querySelector('.form__input[name="phone"]');
 const emailInput = document.querySelector('.form__input[name="email"]');
