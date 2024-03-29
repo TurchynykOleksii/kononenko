@@ -45,6 +45,7 @@ const emailInputError = document.querySelector(
   '.form__input[name="email"] ~ .form__error-message'
 );
 const formEl = document.querySelector('.form__mould');
+const overlay = document.querySelector('.overlay');
 const formSuccessScreen = document.querySelector('.form__success-screen');
 const formErrorScreen = document.querySelector('.form__error-screen');
 
@@ -96,12 +97,10 @@ const onFormSubmit = (e) => {
   }
 
   // успішна відправка
-  formEl.style.display = 'none';
-  formSuccessScreen.style.display = 'flex';
-
-  // якщо сталась помилка
-  // formEl.style.display = "none";
-  // formErrorScreen.style.display = "flex";
+  overlay.classList.add('overlay__open', 'overlay__success');
+  setTimeout(() => {
+    overlay.classList.remove('overlay__open', 'overlay__success');
+  }, 3000);
 };
 
 nameInput.addEventListener('blur', checkNameValid);
