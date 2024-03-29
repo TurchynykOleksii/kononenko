@@ -334,6 +334,15 @@ form label {
   padding-top: clamp(1px, 10vw, 192px);
   padding-bottom: clamp(1px, 2.6vw, 50px);
 }
+@media only screen and (max-width: 900px) {
+  .hero {
+    padding-top: clamp(112px, 35vw, 35vw);
+    padding-bottom: clamp(50px, 15.625vw, 15.625vw);
+  }
+}
+.hero .wrapper {
+  position: relative;
+}
 .hero__inner {
   display: flex;
   justify-content: space-between;
@@ -404,6 +413,21 @@ form label {
     margin-left: 0;
   }
 }
+.hero__decor {
+  position: absolute;
+  right: clamp(1px, 29.32vw, 563px);
+  bottom: 0;
+  background-color: #902908;
+  width: clamp(1px, 0.52vw, 10px);
+  height: clamp(1px, 0.52vw, 10px);
+}
+@media only screen and (max-width: 900px) {
+  .hero__decor {
+    right: clamp(10px, 3.125vw, 3.125vw);
+    width: clamp(8px, 2.5vw, 2.5vw);
+    height: clamp(8px, 2.5vw, 2.5vw);
+  }
+}
 @media only screen and (max-width: 900px) {
   .hero__list--pc {
     display: none;
@@ -447,8 +471,8 @@ form label {
 }
 @media only screen and (max-width: 900px) {
   .works {
-    padding-top: clamp(1px, 28.88vw, 260px);
-    padding-bottom: clamp(1px, 30.11vw, 271px);
+    padding-top: clamp(50px, 15.625vw, 15.625vw);
+    padding-bottom: clamp(50px, 15.625vw, 15.625vw);
   }
 }
 .works__title {
@@ -484,7 +508,6 @@ form label {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: start;
   gap: clamp(1px, 15.36vw, 295px);
 }
 @media only screen and (max-width: 900px) {
@@ -506,7 +529,12 @@ form label {
 .works__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(1px, 1.04vw, 20px);
+}
+@media only screen and (max-width: 900px) {
+  .works__wrapper {
+    gap: clamp(12px, 3.75vw, 3.75vw);
+  }
 }
 .works__wrapper--big {
   width: clamp(1px, 51.56vw, 990px);
@@ -607,6 +635,9 @@ form label {
   .works__more {
     font-size: clamp(16px, 3.66vw, 33px);
   }
+}
+.works__more:hover {
+  cursor: pointer;
 }
 
 .form {
@@ -854,7 +885,7 @@ form label {
     width: clamp(1px, 93.66vw, 843px);
   }
 }
-.benefits__list li:first-child {
+.benefits__list li:first-child, .benefits__list li:last-child {
   text-align: justify;
 }
 .benefits__list li h4 {
@@ -960,16 +991,15 @@ form label {
   text-transform: uppercase;
 }
 .follow__item {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .follow__item:after {
   content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  width: 24px;
-  height: 24px;
+  background-size: clamp(1px, 1.25vw, 24px);
+  height: clamp(1px, 1.25vw, 24px);
+  width: clamp(1px, 1.25vw, 24px);
   background-image: url("../../img/icons/arrow-up-right.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1239,6 +1269,7 @@ form label {
 @media only screen and (max-width: 900px) {
   .object__presentation {
     flex-direction: column;
+    gap: clamp(38px, 11.875vw, 11.875vw);
   }
 }
 .object__wrap {
@@ -1258,11 +1289,35 @@ form label {
   letter-spacing: -0.05em;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 900px) {
+  .object__headline {
+    margin-bottom: clamp(24px, 7.5vw, 7.5vw);
+    font-size: clamp(32px, 10vw, 10vw);
+  }
+}
+.object__info-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 900px) {
+  .object__info-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: clamp(40px, 12.5vw, 12.5vw);
+  }
+}
 .object__year {
   margin-bottom: clamp(1px, 1.25vw, 24px);
   font-size: clamp(1px, 1.14vw, 22px);
   line-height: 1.4;
   color: #969696;
+}
+@media only screen and (max-width: 900px) {
+  .object__year {
+    margin-bottom: 0;
+    font-size: clamp(14px, 4.375vw, 4.375vw);
+    line-height: 1.5;
+  }
 }
 .object__subtitle {
   font-weight: 700;
@@ -1271,16 +1326,27 @@ form label {
   text-transform: uppercase;
   color: #902908;
 }
+@media only screen and (max-width: 900px) {
+  .object__subtitle {
+    font-size: clamp(20px, 6.25vw, 6.25vw);
+  }
+}
 .object__presentation-info {
   display: flex;
   flex-direction: column;
   gap: clamp(1px, 1.04vw, 20px);
 }
 @media only screen and (max-width: 900px) {
+  .object__presentation-info {
+    gap: clamp(20px, 6.25vw, 6.25vw);
+  }
+}
+@media only screen and (max-width: 900px) {
   .object__presentation-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: clamp(1px, 3.111vw, 28px);
   }
 }
 .object__presentation-big {
@@ -1313,11 +1379,11 @@ form label {
   }
 }
 .object__two-sizes {
-  width: clamp(1px, 144.667vw, 402px);
+  width: clamp(1px, 44.667vw, 402px);
   height: clamp(1px, 45.222vw, 407px);
 }
 .object__two-sizes img {
-  width: clamp(1px, 144.667vw, 402px);
+  width: clamp(1px, 44.667vw, 402px);
   height: clamp(1px, 45.222vw, 407px);
   object-fit: cover;
 }
@@ -1331,12 +1397,13 @@ form label {
   }
 }
 .object__two-pc {
+  position: relative;
   display: flex;
   gap: clamp(1px, 0.677vw, 13px);
 }
 .object__two-pc img {
   width: clamp(1px, 11.302vw, 217px);
-  height: clamp(1px, 11.458vw, 220px);
+  height: clamp(1px, 11.302vw, 217px);
 }
 @media only screen and (max-width: 900px) {
   .object__two-pc {
@@ -1344,8 +1411,16 @@ form label {
   }
 }
 .object__img-sizes {
+  z-index: 0;
   flex-shrink: 0;
   position: relative;
+  transition: all 300ms ease-in-out 0ms;
+}
+.object__img-sizes.img-left {
+  transform-origin: bottom left;
+}
+.object__img-sizes.img-right {
+  transform-origin: bottom right;
 }
 .object__img-sizes:after {
   content: "";
@@ -1364,6 +1439,14 @@ form label {
   .object__img-sizes:after {
     display: none;
   }
+}
+.object__img-sizes:hover {
+  position: relative;
+  transform: scale(2.06);
+  z-index: 2;
+}
+.object__img-sizes:hover::after {
+  display: none;
 }
 .object__list {
   display: flex;
@@ -1392,6 +1475,7 @@ form label {
   .object__first {
     flex-direction: column;
     align-items: center;
+    gap: clamp(20px, 6.25vw, 6.25vw);
   }
 }
 .object__first-big {
@@ -1434,7 +1518,7 @@ form label {
   .object__second {
     flex-direction: column;
     align-items: center;
-    gap: clamp(1px, 6.444vw, 58px);
+    gap: clamp(10px, 3.125vw, 3.125vw);
   }
 }
 .object__second-small {
@@ -1461,7 +1545,6 @@ form label {
 }
 .object__third {
   gap: clamp(1px, 18.69vw, 359px);
-  flex-direction: column;
 }
 @media only screen and (max-width: 900px) {
   .object__third {
@@ -1480,6 +1563,7 @@ form label {
   .object__third-text {
     width: clamp(1px, 92.444vw, 832px);
     font-size: clamp(1px, 4.333vw, 39px);
+    padding-top: clamp(10px, 3.125vw, 3.125vw);
   }
 }
 .object__third-big {
@@ -1500,7 +1584,7 @@ form label {
   .object__fourth {
     flex-direction: column;
     align-items: center;
-    gap: clamp(1px, 6.444vw, 58px);
+    gap: clamp(10px, 3.125vw, 3.125vw);
   }
 }
 .object__fourth-big {
@@ -1530,14 +1614,20 @@ form label {
   .object__fifth {
     flex-direction: column;
     align-items: center;
-    gap: clamp(1px, 6.444vw, 58px);
+    gap: clamp(10px, 3.125vw, 3.125vw);
   }
 }
 .object__fifth-wrap {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: clamp(1px, 2.344vw, 45px);
+}
+@media only screen and (max-width: 900px) {
+  .object__fifth-wrap {
+    gap: clamp(10px, 3.125vw, 3.125vw);
+  }
 }
 .object__fifth-small {
   flex-shrink: 0;
@@ -1547,7 +1637,7 @@ form label {
 @media only screen and (max-width: 900px) {
   .object__fifth-small {
     width: clamp(1px, 92.444vw, 832px);
-    height: clamp(1px, 56.778vw, 511px);
+    height: clamp(1px, 93.667vw, 843px);
   }
 }
 .object__fifth-text {
@@ -1560,6 +1650,8 @@ form label {
   .object__fifth-text {
     width: clamp(1px, 92.444vw, 832px);
     font-size: clamp(1px, 4.333vw, 39px);
+    padding-top: clamp(10px, 3.125vw, 3.125vw);
+    padding-bottom: clamp(10px, 3.125vw, 3.125vw);
   }
 }
 .object__fifth-big {
@@ -1580,7 +1672,7 @@ form label {
   .object__sixth {
     flex-direction: column;
     align-items: center;
-    gap: clamp(1px, 6.444vw, 58px);
+    gap: clamp(10px, 3.125vw, 3.125vw);
   }
 }
 .object__sixth-small {
@@ -1591,7 +1683,7 @@ form label {
 @media only screen and (max-width: 900px) {
   .object__sixth-small {
     width: clamp(1px, 92.444vw, 832px);
-    height: clamp(1px, 55.556vw, 500px);
+    height: clamp(1px, 93.667vw, 843px);
   }
 }
 .object__sixth-big {
@@ -1622,7 +1714,7 @@ form label {
 @media only screen and (max-width: 900px) {
   .object__seventh-big {
     width: clamp(1px, 92.444vw, 832px);
-    height: clamp(1px, 120.556vw, 1085px);
+    height: clamp(1px, 56.778vw, 511px);
   }
 }
 .object__seventh-text {
@@ -1646,13 +1738,19 @@ form label {
 @media only screen and (max-width: 900px) {
   .object__seventh-small {
     width: clamp(1px, 92.444vw, 832px);
-    height: clamp(1px, 56.778vw, 511px);
+    height: clamp(1px, 120.556vw, 1085px);
   }
 }
 
 .footer {
-  padding-top: 80px;
-  padding-bottom: 50px;
+  padding-top: clamp(1px, 4.17vw, 80px);
+  padding-bottom: clamp(1px, 2.08vw, 40px);
+}
+@media only screen and (max-width: 900px) {
+  .footer {
+    padding-top: clamp(50px, 15.625vw, 15.625vw);
+    padding-bottom: clamp(20px, 6.25vw, 6.25vw);
+  }
 }
 .footer__title {
   margin-left: clamp(-20px, -1.04vw, 1px);
@@ -1666,7 +1764,8 @@ form label {
 }
 @media only screen and (max-width: 900px) {
   .footer__title {
-    margin-bottom: clamp(1px, 15.88vw, 143px);
+    margin-bottom: clamp(15px, 12.5vw, 12.5vw);
+    margin-top: 0;
   }
 }
 .footer__list {
@@ -1681,9 +1780,9 @@ form label {
   }
 }
 .footer__link {
-  position: relative;
-  display: inline-block;
-  padding-right: clamp(1px, 2.9vw, 56px);
+  display: flex;
+  align-items: center;
+  gap: clamp(1px, 1.25vw, 24px);
   font-weight: 700;
   font-size: clamp(1px, 1.25vw, 24px);
   text-transform: uppercase;
@@ -1695,10 +1794,6 @@ form label {
 }
 .footer__link:after {
   content: "";
-  position: absolute;
-  top: -5px;
-  right: 0;
-  display: block;
   width: clamp(1px, 1.71vw, 33px);
   height: clamp(1px, 1.71vw, 33px);
   background-image: url("../../img/icons/footer-arrow.svg");
@@ -1706,13 +1801,14 @@ form label {
   background-repeat: no-repeat;
   background-size: clamp(1px, 1.71vw, 33px);
 }
-@media only screen and (max-width: 861px) {
+@media only screen and (max-width: 900px) {
   .footer__link:after {
     display: none;
   }
 }
 .footer__copy {
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
   gap: 20px;
 }
@@ -1739,26 +1835,22 @@ form label {
   }
 }
 .footer__up {
-  position: relative;
-  display: inline-block;
-  padding-right: clamp(1px, 2.91vw, 56px);
+  display: flex;
+  align-items: center;
+  gap: clamp(1px, 2.91vw, 56px);
   font-weight: 700;
-  font-size: clamp(1px, 2.66vw, 24px);
+  font-size: clamp(1px, 1.25vw, 24px);
   text-transform: uppercase;
   color: #545454;
 }
 @media only screen and (max-width: 900px) {
   .footer__up {
-    padding-right: clamp(1px, 7.5vw, 68px);
+    gap: clamp(4px, 1.25vw, 1.25vw);
     font-size: clamp(1px, 4.3vw, 39px);
   }
 }
 .footer__up:after {
   content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
   width: clamp(1px, 1.66vw, 32px);
   height: clamp(1px, 1.66vw, 32px);
   background-image: url("../../img/icons/footer-down.svg");
@@ -1768,7 +1860,6 @@ form label {
 }
 @media only screen and (max-width: 900px) {
   .footer__up:after {
-    top: -10px;
     width: clamp(1px, 6.3vw, 57px);
     height: clamp(1px, 6.3vw, 57px);
     background-size: clamp(1px, 6.3vw, 57px);
@@ -1781,7 +1872,8 @@ form label {
   left: 100%;
   width: 100%;
   height: 100%;
-  padding-top: clamp(1px, 51.11vw, 460px);
+  display: flex;
+  justify-content: space-between;
   padding-left: clamp(1px, 3.125vw, 60px);
   padding-right: clamp(1px, 3.125vw, 60px);
   padding-bottom: clamp(1px, 5.77vw, 52px);
@@ -1792,12 +1884,20 @@ form label {
   z-index: 2;
   transition: left 250ms ease;
 }
+@media only screen and (min-width: 900.1px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+.mobile-menu__space-taker {
+  flex-shrink: 0;
+  height: clamp(68px, 21.25vw, 21.25vw);
+}
 .mobile-menu.mobile-menu__active {
   left: 0;
   overflow: auto;
 }
 .mobile-menu__list {
-  margin-bottom: auto;
   display: flex;
   flex-direction: column;
   gap: clamp(1px, 6.66vw, 60px);
@@ -1809,15 +1909,21 @@ form label {
   letter-spacing: -0.05em;
   text-transform: uppercase;
 }
+.mobile-menu__social-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(46px, 14.375vw, 14.375vw);
+}
+.mobile-menu__social-wrapper strong {
+  flex-shrink: 0;
+  text-transform: uppercase;
+  font-size: clamp(1px, 4.33vw, 39px);
+}
 .mobile-menu__social {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: clamp(1px, 5.77vw, 52px) clamp(1px, 11.55vw, 104px);
+  gap: clamp(1px, 5.77vw, 52px) clamp(46px, 14.375vw, 14.375vw);
 }
 .mobile-menu__link a {
   font-size: clamp(1px, 4.33vw, 39px);
-}
-.mobile-menu__link a strong {
-  text-transform: uppercase;
 }

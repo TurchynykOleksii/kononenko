@@ -16,6 +16,7 @@
 
     @include maxw($sm-pc) {
       flex-direction: column;
+      gap: clamp(38px, 11.875vw, 11.875vw);
     }
   }
 
@@ -39,6 +40,22 @@
     line-height: 0.9;
     letter-spacing: -0.05em;
     text-transform: uppercase;
+
+    @include maxw($sm-pc) {
+      margin-bottom: clamp(24px, 7.5vw, 7.5vw);
+      font-size: clamp(32px, 10vw, 10vw);
+    }
+  }
+
+  &__info-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include maxw($sm-pc) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: clamp(40px, 12.5vw, 12.5vw);
+    }
   }
 
   &__year {
@@ -46,6 +63,12 @@
     font-size: clamp(1px, 1.14vw, 22px);
     line-height: 1.4;
     color: #969696;
+
+    @include maxw($sm-pc) {
+      margin-bottom: 0;
+      font-size: clamp(14px, 4.375vw, 4.375vw);
+      line-height: 1.5;
+    }
   }
 
   &__subtitle {
@@ -54,6 +77,10 @@
     line-height: 1.2;
     text-transform: uppercase;
     color: $accentColor;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(20px, 6.25vw, 6.25vw);
+    }
   }
 
 
@@ -61,6 +88,10 @@
     display: flex;
     flex-direction: column;
     gap: clamp(1px, 1.04vw, 20px);
+
+    @include maxw($sm-pc) {
+      gap: clamp(20px, 6.25vw, 6.25vw)
+    }
   }
 
   &__presentation-wrapper {
@@ -68,6 +99,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: clamp(1px, 3.111vw, 28px);
     }
   }
 
@@ -102,11 +134,11 @@
   }
 
   &__two-sizes {
-    width: clamp(1px, 144.667vw, 402px);
+    width: clamp(1px, 44.667vw, 402px);
     height: clamp(1px, 45.222vw, 407px);
 
     img {
-      width: clamp(1px, 144.667vw, 402px);
+      width: clamp(1px, 44.667vw, 402px);
       height: clamp(1px, 45.222vw, 407px);
       object-fit: cover;
     }
@@ -126,12 +158,13 @@
 
 
   &__two-pc {
+    position: relative;
     display: flex;
     gap: clamp(1px, 0.677vw, 13px);
 
     img {
       width: clamp(1px, 11.302vw, 217px);
-      height: clamp(1px, 11.458vw, 220px);
+      height: clamp(1px, 11.302vw, 217px);
     }
 
     @include maxw($sm-pc) {
@@ -140,8 +173,19 @@
   }
 
   &__img-sizes {
+    z-index: 0;
     flex-shrink: 0;
     position: relative;
+    transition: all 300ms ease-in-out 0ms;
+
+
+    &.img-left {
+      transform-origin: bottom left;
+    }
+
+    &.img-right {
+      transform-origin: bottom right;
+    }
 
     &:after {
       content: '';
@@ -159,6 +203,16 @@
       @include maxw($sm-pc) {
         display: none;
       }
+    }
+  }
+
+  &__img-sizes:hover {
+    position: relative;
+    transform: scale(2.06);
+    z-index: 2;
+
+    &::after {
+      display: none;
     }
   }
 
@@ -190,7 +244,7 @@
     @include maxw($sm-pc) {
       flex-direction: column;
       align-items: center;
-
+      gap: clamp(20px, 6.25vw, 6.25vw);
     }
   }
 
@@ -233,7 +287,7 @@
     @include maxw($sm-pc) {
       flex-direction: column;
       align-items: center;
-      gap: clamp(1px, 6.444vw, 58px);
+      gap: clamp(10px, 3.125vw, 3.125vw);
     }
   }
 
@@ -262,7 +316,6 @@
 
   &__third {
     gap: clamp(1px, 18.69vw, 359px);
-    flex-direction: column;
 
     @include maxw($sm-pc) {
       flex-direction: column;
@@ -280,6 +333,7 @@
     @include maxw($sm-pc) {
       width: clamp(1px, 92.444vw, 832px);
       font-size: clamp(1px, 4.333vw, 39px);
+      padding-top: clamp(10px, 3.125vw, 3.125vw);
     }
   }
 
@@ -300,7 +354,7 @@
     @include maxw($sm-pc) {
       flex-direction: column;
       align-items: center;
-      gap: clamp(1px, 6.444vw, 58px);
+      gap: clamp(10px, 3.125vw, 3.125vw);
     }
   }
 
@@ -330,7 +384,7 @@
     @include maxw($sm-pc) {
       flex-direction: column;
       align-items: center;
-      gap: clamp(1px, 6.444vw, 58px);
+      gap: clamp(10px, 3.125vw, 3.125vw);
     }
   }
 
@@ -338,7 +392,12 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: clamp(1px, 2.344vw, 45px);
+
+    @include maxw($sm-pc) {
+      gap: clamp(10px, 3.125vw, 3.125vw);
+    }
   }
 
   &__fifth-small {
@@ -348,7 +407,7 @@
 
     @include maxw($sm-pc) {
       width: clamp(1px, 92.444vw, 832px);
-      height: clamp(1px, 56.778vw, 511px);
+      height: clamp(1px, 93.667vw, 843px);
     }
   }
 
@@ -361,6 +420,8 @@
     @include maxw($sm-pc) {
       width: clamp(1px, 92.444vw, 832px);
       font-size: clamp(1px, 4.333vw, 39px);
+      padding-top: clamp(10px, 3.125vw, 3.125vw);
+      padding-bottom: clamp(10px, 3.125vw, 3.125vw);
     }
   }
 
@@ -381,7 +442,7 @@
     @include maxw($sm-pc) {
       flex-direction: column;
       align-items: center;
-      gap: clamp(1px, 6.444vw, 58px);
+      gap: clamp(10px, 3.125vw, 3.125vw);
     }
   }
 
@@ -392,7 +453,7 @@
 
     @include maxw($sm-pc) {
       width: clamp(1px, 92.444vw, 832px);
-      height: clamp(1px, 55.556vw, 500px);
+      height: clamp(1px, 93.667vw, 843px);
     }
   }
 
@@ -423,7 +484,7 @@
 
     @include maxw($sm-pc) {
       width: clamp(1px, 92.444vw, 832px);
-      height: clamp(1px, 120.556vw, 1085px);
+      height: clamp(1px, 56.778vw, 511px);
     }
   }
 
@@ -448,7 +509,7 @@
 
     @include maxw($sm-pc) {
       width: clamp(1px, 92.444vw, 832px);
-      height: clamp(1px, 56.778vw, 511px);
+      height: clamp(1px, 120.556vw, 1085px);
     }
   }
 }

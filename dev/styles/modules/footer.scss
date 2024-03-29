@@ -1,8 +1,13 @@
 @import "../core";
 
 .footer {
-  padding-top: 80px;
-  padding-bottom: 50px;
+  padding-top: clamp(1px, 4.17vw, 80px);
+  padding-bottom: clamp(1px, 2.08vw, 40px);
+
+  @include maxw($sm-pc) {
+    padding-top: clamp(50px, 15.625vw, 15.625vw);
+    padding-bottom: clamp(20px, 6.25vw, 6.25vw);
+  }
 
   &__title {
     margin-left: clamp(-20px, -1.04vw, 1px);
@@ -15,12 +20,12 @@
     text-transform: uppercase;
 
     @include maxw($sm-pc) {
-      margin-bottom: clamp(1px, 15.88vw, 143px);
+      margin-bottom: clamp(15px, 12.5vw, 12.5vw);
+      margin-top: 0;
     }
   }
 
   &__list {
-
     margin-bottom: clamp(1px, 1.66vw, 32px);
     display: flex;
     justify-content: space-between;
@@ -32,9 +37,9 @@
   }
 
   &__link {
-    position: relative;
-    display: inline-block;
-    padding-right: clamp(1px, 2.9vw, 56px);
+    display: flex;
+    align-items: center;
+    gap: clamp(1px, 1.25vw, 24px);
     font-weight: 700;
     font-size: clamp(1px, 1.25vw, 24px);
     text-transform: uppercase;
@@ -45,10 +50,6 @@
 
     &:after {
       content: '';
-      position: absolute;
-      top: -5px;
-      right: 0;
-      display: block;
       width: clamp(1px, 1.71vw, 33px);
       height: clamp(1px, 1.71vw, 33px);
       background-image: url('../../img/icons/footer-arrow.svg');
@@ -56,7 +57,7 @@
       background-repeat: no-repeat;
       background-size: clamp(1px, 1.71vw, 33px);
 
-      @include maxw(861px) {
+      @include maxw($sm-pc) {
         display: none;
       }
     }
@@ -64,6 +65,7 @@
 
   &__copy {
     display: flex;
+    align-items: baseline;
     justify-content: space-between;
     gap: 20px;
   }
@@ -94,25 +96,21 @@
   }
 
   &__up {
-    position: relative;
-    display: inline-block;
-    padding-right: clamp(1px, 2.91vw, 56px);
+    display: flex;
+    align-items: center;
+    gap: clamp(1px, 2.91vw, 56px);
     font-weight: 700;
-    font-size: clamp(1px, 2.66vw, 24px);
+    font-size: clamp(1px, 1.25vw, 24px);
     text-transform: uppercase;
     color: #545454;
 
     @include maxw($sm-pc) {
-      padding-right: clamp(1px, 7.5vw, 68px);
+      gap: clamp(4px, 1.25vw, 1.25vw);
       font-size: clamp(1px, 4.3vw, 39px);
     }
 
     &:after {
       content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
       width: clamp(1px, 1.66vw, 32px);
       height: clamp(1px, 1.66vw, 32px);
       background-image: url('../../img/icons/footer-down.svg');
@@ -121,7 +119,6 @@
       background-size: clamp(1px, 1.66vw, 32px);
 
       @include maxw($sm-pc) {
-        top: -10px;
         width: clamp(1px, 6.3vw, 57px);
         height: clamp(1px, 6.3vw, 57px);
         background-size: clamp(1px, 6.3vw, 57px);
@@ -136,7 +133,8 @@
   left: 100%;
   width: 100%;
   height: 100%;
-  padding-top: clamp(1px, 51.11vw, 460px);
+  display: flex;
+  justify-content: space-between;
   padding-left: clamp(1px, 3.125vw, 60px);
   padding-right: clamp(1px, 3.125vw, 60px);
   padding-bottom: clamp(1px, 5.77vw, 52px);
@@ -147,13 +145,21 @@
   z-index: 2;
   transition: left 250ms ease;
 
+  @include minw(900.1px) {
+    display: none;
+  }
+
+  &__space-taker {
+    flex-shrink: 0;
+    height: clamp(68px, 21.25vw, 21.25vw);
+  }
+
   &.mobile-menu__active {
     left: 0;
     overflow: auto;
   }
 
   &__list {
-    margin-bottom: auto;
     display: flex;
     flex-direction: column;
     gap: clamp(1px, 6.66vw, 60px);
@@ -168,20 +174,27 @@
     }
   }
 
+  &__social-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: clamp(46px, 14.375vw, 14.375vw);
+
+    strong {
+      flex-shrink: 0;
+      text-transform: uppercase;
+      font-size: clamp(1px, 4.33vw, 39px);
+    }
+  }
+
   &__social {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: clamp(1px, 5.77vw, 52px) clamp(1px, 11.55vw, 104px);
+    gap: clamp(1px, 5.77vw, 52px) clamp(46px, 14.375vw, 14.375vw);
   }
 
   &__link {
     a {
       font-size: clamp(1px, 4.33vw, 39px);
-
-      strong {
-        text-transform: uppercase;
-      }
     }
   }
 }

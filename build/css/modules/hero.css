@@ -2,6 +2,15 @@
   padding-top: clamp(1px, 10vw, 192px);
   padding-bottom: clamp(1px, 2.6vw, 50px);
 }
+@media only screen and (max-width: 900px) {
+  .hero {
+    padding-top: clamp(112px, 35vw, 35vw);
+    padding-bottom: clamp(50px, 15.625vw, 15.625vw);
+  }
+}
+.hero .wrapper {
+  position: relative;
+}
 .hero__inner {
   display: flex;
   justify-content: space-between;
@@ -70,6 +79,21 @@
 @media only screen and (max-width: 900px) {
   .hero__services {
     margin-left: 0;
+  }
+}
+.hero__decor {
+  position: absolute;
+  right: clamp(1px, 29.32vw, 563px);
+  bottom: 0;
+  background-color: #902908;
+  width: clamp(1px, 0.52vw, 10px);
+  height: clamp(1px, 0.52vw, 10px);
+}
+@media only screen and (max-width: 900px) {
+  .hero__decor {
+    right: clamp(10px, 3.125vw, 3.125vw);
+    width: clamp(8px, 2.5vw, 2.5vw);
+    height: clamp(8px, 2.5vw, 2.5vw);
   }
 }
 @media only screen and (max-width: 900px) {

@@ -122,7 +122,7 @@
     width: clamp(1px, 93.66vw, 843px);
   }
 }
-.benefits__list li:first-child {
+.benefits__list li:first-child, .benefits__list li:last-child {
   text-align: justify;
 }
 .benefits__list li h4 {
@@ -228,16 +228,15 @@
   text-transform: uppercase;
 }
 .follow__item {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .follow__item:after {
   content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  width: 24px;
-  height: 24px;
+  background-size: clamp(1px, 1.25vw, 24px);
+  height: clamp(1px, 1.25vw, 24px);
+  width: clamp(1px, 1.25vw, 24px);
   background-image: url("../../img/icons/arrow-up-right.svg");
   background-repeat: no-repeat;
   background-position: center;

@@ -4,7 +4,14 @@
   padding-top: clamp(1px, 10vw, 192px);
   padding-bottom: clamp(1px, 2.6vw, 50px);
 
+  @include maxw($sm-pc) {
+    padding-top: clamp(112px, 35vw, 35vw);
+    padding-bottom: clamp(50px, 15.625vw, 15.625vw);
+  }
 
+  & .wrapper {
+    position: relative;
+  }
 
   &__inner {
     display: flex;
@@ -77,6 +84,21 @@
 
     @include maxw($sm-pc) {
       margin-left: 0;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    right: clamp(1px, 29.32vw, 563px);
+    bottom: 0;
+    background-color: $accentColor;
+    width: clamp(1px, 0.52vw, 10px);
+    height: clamp(1px, 0.52vw, 10px);
+
+    @include maxw($sm-pc) {
+      right: clamp(10px, 3.125vw, 3.125vw);
+      width: clamp(8px, 2.5vw, 2.5vw);
+      height: clamp(8px, 2.5vw, 2.5vw);
     }
   }
 
