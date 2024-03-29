@@ -41,6 +41,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: start;
   gap: clamp(1px, 15.36vw, 295px);
 }
 @media only screen and (max-width: 900px) {
@@ -124,6 +125,7 @@
   }
 }
 .works__view {
+  position: static;
   font-weight: 400;
   font-size: clamp(1px, 1.14vw, 22px);
   line-height: 1.4;
@@ -132,6 +134,19 @@
   .works__view {
     font-size: clamp(1px, 4.33vw, 39px);
   }
+}
+.works__view:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.works__wrapper {
+  position: relative;
+  overflow: hidden;
 }
 .works__more {
   display: block;

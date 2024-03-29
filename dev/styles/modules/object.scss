@@ -1,0 +1,454 @@
+@import "../core";
+
+.object {
+  padding-bottom: clamp(1px, 3.906vw, 75px);
+
+  @include maxw($sm-pc) {
+    padding-bottom: clamp(1px, 17.556vw, 158px);
+  }
+
+  &__presentation {
+    margin-top: clamp(1px, 4.688vw, 90px);
+    margin-bottom: clamp(1px, 6.25vw, 120px);
+    display: flex;
+    gap: clamp(1px, 18.69vw, 359px);
+    overflow: hidden;
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1px, 13.698vw, 263px);
+
+
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__headline {
+    margin-bottom: clamp(1px, 0.521vw, 10px);
+    font-weight: 700;
+    font-size: clamp(1px, 2.604vw, 50px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  &__year {
+    margin-bottom: clamp(1px, 1.25vw, 24px);
+    font-size: clamp(1px, 1.14vw, 22px);
+    line-height: 1.4;
+    color: #969696;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: clamp(1px, 1.771vw, 34px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: $accentColor;
+  }
+
+
+  &__presentation-info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1px, 1.04vw, 20px);
+  }
+
+  &__presentation-wrapper {
+    @include maxw($sm-pc) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__presentation-big {
+    object-position: center;
+    width: clamp(1px, 51.56vw, 990px);
+    height: clamp(1px, 33.021vw, 634px);
+    overflow: hidden;
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 93.667vw, 843px);
+
+      img {
+        width: clamp(1px, 92.444vw, 832px);
+        height: clamp(1px, 93.667vw, 843px);
+      }
+    }
+  }
+
+  &__presentation-text {
+    width: clamp(1px, 31.667vw, 608px);
+    font-weight: 700;
+    font-size: clamp(1px, 1.771vw, 34px);
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      font-size: clamp(1px, 6.222vw, 56px);
+    }
+  }
+
+  &__two-sizes {
+    width: clamp(1px, 144.667vw, 402px);
+    height: clamp(1px, 45.222vw, 407px);
+
+    img {
+      width: clamp(1px, 144.667vw, 402px);
+      height: clamp(1px, 45.222vw, 407px);
+      object-fit: cover;
+    }
+  }
+
+  &__two-mob {
+    display: none;
+
+
+
+    @include maxw($sm-pc) {
+      display: flex;
+      gap: clamp(1px, 3.111vw, 28px);
+    }
+  }
+
+
+
+  &__two-pc {
+    display: flex;
+    gap: clamp(1px, 0.677vw, 13px);
+
+    img {
+      width: clamp(1px, 11.302vw, 217px);
+      height: clamp(1px, 11.458vw, 220px);
+    }
+
+    @include maxw($sm-pc) {
+      display: none;
+    }
+  }
+
+  &__img-sizes {
+    flex-shrink: 0;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: clamp(1px, 1.04vw, 20px);
+      right: clamp(1px, 1.04vw, 20px);
+      display: block;
+      width: clamp(1px, 1.25vw, 24px);
+      height: clamp(1px, 1.25vw, 24px);
+      background-image: url('../../img/icons/plus-circle.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: clamp(1px, 1.25vw, 24px);
+
+      @include maxw($sm-pc) {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1px, 6.25vw, 120px);
+
+    @include maxw($sm-pc) {
+      align-items: center;
+      gap: clamp(1px, 3.111vw, 28px);
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__first {
+    align-items: end;
+    gap: clamp(1px, 1.04vw, 20px);
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+
+  &__first-big {
+    flex-shrink: 0;
+    width: clamp(1px, 41.14vw, 790px);
+    height: clamp(1px, 44.53vw, 855px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 93.667vw, 843px);
+    }
+  }
+
+  &__first-text {
+    font-size: clamp(1px, 1.14vw, 22px);
+    line-height: 1.4;
+    text-align: justify;
+
+    @include maxw($sm-pc) {
+      font-size: clamp(1px, 4.333vw, 39px);
+    }
+  }
+
+  &__first-small {
+    align-self: start;
+    flex-shrink: 0;
+    width: clamp(1px, 18.8vw, 361px);
+    height: clamp(1px, 25.52vw, 490px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 120.556vw, 1085px);
+    }
+  }
+
+  &__second {
+    gap: clamp(1px, 18.75vw, 360px);
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1px, 6.444vw, 58px);
+    }
+  }
+
+  &__second-small {
+    flex-shrink: 0;
+    width: clamp(1px, 23.43vw, 450px);
+    height: clamp(1px, 25vw, 480px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 93.667vw, 843px);
+    }
+
+  }
+
+  &__second-big {
+    flex-shrink: 0;
+    width: clamp(1px, 31.77vw, 610px);
+    height: clamp(1px, 36.97vw, 710px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 120.556vw, 1085px);
+    }
+  }
+
+  &__third {
+    gap: clamp(1px, 18.69vw, 359px);
+    flex-direction: column;
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1px, 6.444vw, 58px);
+    }
+  }
+
+  &__third-text {
+    width: clamp(1px, 23.43vw, 450px);
+    font-size: clamp(1px, 1.14vw, 22px);
+    line-height: 1.4;
+    text-align: justify;
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      font-size: clamp(1px, 4.333vw, 39px);
+    }
+  }
+
+  &__third-big {
+    flex-shrink: 0;
+    width: clamp(1px, 51.56vw, 990px);
+    height: clamp(1px, 51.56vw, 990px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 93.667vw, 843px);
+    }
+  }
+
+  &__fourth {
+    gap: clamp(1px, 33.69vw, 647px);
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1px, 6.444vw, 58px);
+    }
+  }
+
+  &__fourth-big {
+    width: clamp(1px, 41.146vw, 790px);
+    height: clamp(1px, 25.313vw, 486px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 56.778vw, 511px);
+    }
+  }
+
+  &__fourth-small {
+    width: clamp(1px, 18.854vw, 362px);
+    height: clamp(1px, 25.052vw, 481px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 120.556vw, 1085px);
+    }
+  }
+
+  &__fifth {
+    gap: clamp(1px, 18.75vw, 360px);
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1px, 6.444vw, 58px);
+    }
+  }
+
+  &__fifth-wrap {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1px, 2.344vw, 45px);
+  }
+
+  &__fifth-small {
+    flex-shrink: 0;
+    width: clamp(1px, 23.43vw, 450px);
+    height: clamp(1px, 25vw, 480px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 56.778vw, 511px);
+    }
+  }
+
+  &__fifth-text {
+    width: clamp(1px, 23.43vw, 450px);
+    font-size: clamp(1px, 1.14vw, 22px);
+    line-height: 1.4;
+    text-align: justify;
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      font-size: clamp(1px, 4.333vw, 39px);
+    }
+  }
+
+  &__fifth-big {
+    flex-shrink: 0;
+    width: clamp(1px, 51.56vw, 990px);
+    height: clamp(1px, 51.56vw, 990px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 120.556vw, 1085px);
+    }
+  }
+
+  &__sixth {
+    gap: clamp(1px, 18.75vw, 360px);
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1px, 6.444vw, 58px);
+    }
+  }
+
+  &__sixth-small {
+    flex-shrink: 0;
+    width: clamp(1px, 23.43vw, 450px);
+    height: clamp(1px, 25vw, 480px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 55.556vw, 500px);
+    }
+  }
+
+  &__sixth-big {
+    width: clamp(1px, 31.77vw, 610px);
+    height: clamp(1px, 36.97vw, 710px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 115.889vw, 1043px);
+    }
+  }
+
+  &__seventh {
+    gap: clamp(1px, 1.04vw, 20px);
+
+    @include maxw($sm-pc) {
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1px, 6.444vw, 58px);
+    }
+  }
+
+  &__seventh-big {
+    flex-shrink: 0;
+    width: clamp(1px, 41.14vw, 790px);
+    height: clamp(1px, 25.313vw, 486px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 120.556vw, 1085px);
+    }
+  }
+
+  &__seventh-text {
+    flex-shrink: 0;
+    width: clamp(1px, 31.77vw, 610px);
+    font-size: clamp(1px, 1.14vw, 22px);
+    line-height: 1.4;
+    text-align: justify;
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      font-size: clamp(1px, 4.333vw, 39px);
+    }
+  }
+
+
+  &__seventh-small {
+    flex-shrink: 0;
+    width: clamp(1px, 18.75vw, 360px);
+    height: clamp(1px, 25vw, 480px);
+
+    @include maxw($sm-pc) {
+      width: clamp(1px, 92.444vw, 832px);
+      height: clamp(1px, 56.778vw, 511px);
+    }
+  }
+}
