@@ -642,12 +642,18 @@ form label {
 
 .form {
   padding-top: clamp(1px, 6.4vw, 123px);
-  padding-bottom: clamp(1px, 2.6vw, 50px);
+  padding-bottom: clamp(1px, 4.17vw, 80px);
+}
+@media only screen and (max-width: 900px) {
+  .form {
+    padding-bottom: clamp(50px, 15.625vw, 15.625vw);
+    padding-top: clamp(50px, 15.625vw, 15.625vw);
+  }
 }
 .form__title {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: clamp(1px, 6.25vw, 120px);
+  margin-bottom: clamp(1px, 4.17vw, 80px);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -657,6 +663,7 @@ form label {
 @media only screen and (max-width: 900px) {
   .form__title {
     flex-direction: column;
+    margin-bottom: clamp(60px, 18.75vw, 18.75vw);
   }
 }
 .form__title-first {
@@ -705,6 +712,17 @@ form label {
 @media only screen and (max-width: 900px) {
   .form__mould {
     width: clamp(1px, 92.44vw, 832px);
+    gap: clamp(20px, 6.25vw, 6.25vw);
+  }
+}
+.form__modul-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: clamp(1px, 38.12vw, 732px);
+}
+@media only screen and (max-width: 900px) {
+  .form__modul-wrapper {
+    width: clamp(1px, 92.44vw, 832px);
   }
 }
 .form__label {
@@ -718,7 +736,7 @@ form label {
     padding-top: clamp(1px, 4.33vw, 39px);
   }
 }
-.form__label span {
+.form__floating-label {
   position: absolute;
   left: clamp(1px, 0.62vw, 12px);
   top: clamp(1px, 1.04vw, 20px);
@@ -727,7 +745,7 @@ form label {
   line-height: 1.4;
 }
 @media only screen and (max-width: 900px) {
-  .form__label span {
+  .form__floating-label {
     top: clamp(1px, 3.77vw, 34px);
     font-size: clamp(1px, 4.33vw, 39px);
   }
@@ -746,8 +764,38 @@ form label {
     font-size: clamp(1px, 4.33vw, 39px);
   }
 }
+.form__input::placeholder {
+  color: transparent;
+}
+.form__input:focus + .form__floating-label, .form__input:not(:placeholder-shown) + .form__floating-label {
+  color: #969696;
+  font-size: clamp(1px, 0.833vw, 16px);
+  top: 0;
+}
+@media only screen and (max-width: 900px) {
+  .form__input:focus + .form__floating-label, .form__input:not(:placeholder-shown) + .form__floating-label {
+    font-size: clamp(10px, 3.125vw, 3.125vw);
+  }
+}
+.form__error-message {
+  display: none;
+  position: absolute;
+  left: clamp(1px, 0.62vw, 12px);
+  bottom: 0;
+  transform: translateY(100%);
+  font-weight: 400;
+  font-size: clamp(1px, 0.833vw, 16px);
+  line-height: 1.4;
+  color: #902908;
+}
+@media only screen and (max-width: 900px) {
+  .form__error-message {
+    font-size: clamp(10px, 3.125vw, 3.125vw);
+  }
+}
 .form__submit {
   padding: clamp(1px, 0.83vw, 16px);
+  margin-top: clamp(1px, 2.083vw, 40px);
   font-weight: 700;
   font-size: clamp(1px, 1.25vw, 22px);
   text-transform: uppercase;
@@ -758,6 +806,62 @@ form label {
   .form__submit {
     padding: clamp(1px, 3.66vw, 33px);
     font-size: clamp(1px, 4.33vw, 39px);
+    margin-top: clamp(40px, 12.5vw, 12.5vw);
+  }
+}
+.form__success-screen, .form__error-screen {
+  padding: clamp(1px, 5vw, 96px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1px, 2.083vw, 40px);
+  background: #000;
+  text-align: center;
+}
+@media only screen and (max-width: 900px) {
+  .form__success-screen, .form__error-screen {
+    padding: clamp(20px, 6.25vw, 6.25vw);
+    gap: clamp(32px, 10vw, 10vw);
+  }
+}
+.form__submit-result {
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(1px, 1.77vw, 34px);
+  text-transform: uppercase;
+  color: #fff;
+}
+@media only screen and (max-width: 900px) {
+  .form__submit-result {
+    font-size: clamp(20px, 6.25vw, 6.25vw);
+  }
+}
+.form__success-icon, .form__error-icon {
+  background-size: clamp(1px, 3.333vw, 64px);
+  width: clamp(1px, 3.333vw, 64px);
+  height: clamp(1px, 3.333vw, 64px);
+}
+@media only screen and (max-width: 900px) {
+  .form__success-icon, .form__error-icon {
+    width: clamp(40px, 12.5vw, 12.5vw);
+    height: clamp(40px, 12.5vw, 12.5vw);
+    background-size: clamp(40px, 12.5vw, 12.5vw);
+  }
+}
+.form__success-icon {
+  background-image: url("../../img/icons/form-check.svg");
+}
+.form__error-icon {
+  background-image: url("../../img/icons/form-cross.svg");
+}
+.form__result-text {
+  font-size: clamp(1px, 1.25vw, 24px);
+  font-weight: 500;
+  color: #fff;
+}
+@media only screen and (max-width: 900px) {
+  .form__result-text {
+    font-size: clamp(14px, 4.375vw, 4.375vw);
   }
 }
 
