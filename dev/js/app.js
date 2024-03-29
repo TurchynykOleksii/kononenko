@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollHeight = window.scrollY;
         console.log('Скролл остановлен, сохраняем позицию:', scrollHeight);
         sessionStorage.setItem('scrollHeight', scrollHeight.toString());
-      }, 1000);
+      }, 200);
     });
   } else {
     console.log('Элемент .works__list не найден на странице.');
