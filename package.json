@@ -15,7 +15,8 @@
 	"author": "Tyrchynyk Oleksii",
 	"license": "MIT",
 	"dependencies": {
-		"gulp-cli": "^2.3.0"
+		"gulp-cli": "^2.3.0",
+		"lodash.throttle": "^4.1.1"
 	},
 	"devDependencies": {
 		"browser-sync": "latest",

@@ -6,6 +6,17 @@ const sloganBlock = document.querySelector('.slogan');
 const sloganTextHeight = document.querySelector('.slogan p');
 const toggleMoreText = document.querySelector('.slogan__toggle');
 
+const throttle = (fn, wait) => {
+  let time = Date.now();
+
+  return () => {
+    if (time + wait - Date.now() < 0) {
+      fn();
+      time = Date.now();
+    }
+  };
+};
+
 function toggleMenu() {
   mobileMenu.classList.toggle('mobile-menu__active');
   if (!mobileMenu.classList.contains('mobile-menu__active')) {
@@ -131,12 +142,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
       scrollTimeout = setTimeout(function () {
         scrollHeight = window.scrollY;
-        console.log('Скролл остановлен, сохраняем позицию:', scrollHeight);
         sessionStorage.setItem('scrollHeight', scrollHeight.toString());
       }, 200);
     });
   } else {
-    console.log('Элемент .works__list не найден на странице.');
   }
 });
 //header scroller
@@ -146,25 +155,19 @@ const header = document.getElementById('header');
 
 function handleScroll() {
   const currentScrollY = window.scrollY;
-  // Check if the viewport height is more than 1200px
-  if (currentScrollY > 600) {
-    // Add 'header__scrolled' to make header fixed at the top
+  if (currentScrollY >= 700) {
     header.classList.add('header__scrolled');
-
     if (currentScrollY > lastScrollY) {
-      // Scrolling down, hide the header
       header.classList.remove('visible');
     } else {
-      // Scrolling up, show the header
       header.classList.add('visible');
     }
   } else {
-    // If viewport height is less than or equal to 1200px, make the header static
     header.classList.remove('header__scrolled', 'visible');
   }
 
   lastScrollY = currentScrollY; // Update the last scroll position
 }
 
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('resize', handleScroll);
+window.addEventListener('scroll', throttle(handleScroll, 200));
+window.addEventListener('resize', throttle(handleScroll, 200));
