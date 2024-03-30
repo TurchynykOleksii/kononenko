@@ -245,6 +245,12 @@
   font-size: clamp(1px, 1.14vw, 22px);
   line-height: 1.4;
 }
+.follow__item {
+  transition: transform 300ms ease-in-out;
+}
+.follow__item:hover {
+  transform: scale(1.1);
+}
 .follow__list {
   display: flex;
   flex-direction: column;

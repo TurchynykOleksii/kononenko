@@ -330,6 +330,18 @@ form label {
   background-image: url("../../img/icons/header-arrow.svg");
   background-size: clamp(1px, 1.25vw, 24px);
 }
+.header__item a {
+  transition: color 300ms ease-in-out;
+}
+.header__item a::after {
+  transition: transform 300ms ease-in-out;
+}
+.header__item:hover a {
+  color: #902908;
+}
+.header__item:hover a::after {
+  transform: rotate(-90deg);
+}
 
 .header__scrolled {
   position: fixed;
@@ -726,6 +738,14 @@ form label {
     width: clamp(1px, 92.44vw, 832px);
     gap: clamp(20px, 6.25vw, 6.25vw);
   }
+}
+.form__mould input[type=submit] {
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.form__mould input[type=submit]:hover {
+  background-color: #fff;
+  color: #000;
 }
 .form__modul-wrapper {
   margin-left: auto;
@@ -1147,6 +1167,12 @@ form label {
 .follow__item a {
   font-size: clamp(1px, 1.14vw, 22px);
   line-height: 1.4;
+}
+.follow__item {
+  transition: transform 300ms ease-in-out;
+}
+.follow__item:hover {
+  transform: scale(1.1);
 }
 .follow__list {
   display: flex;

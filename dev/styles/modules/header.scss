@@ -104,7 +104,23 @@
     }
   }
 
+  &__item {
+    & a {
+      transition: color 300ms ease-in-out;
 
+      &::after {
+        transition: transform 300ms ease-in-out;
+      }
+    }
+
+    &:hover a {
+      color: $accentColor;
+
+      &::after {
+        transform: rotate(-90deg);
+      }
+    }
+  }
 }
 
 .header__scrolled {

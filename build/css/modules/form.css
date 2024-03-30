@@ -73,6 +73,14 @@
     gap: clamp(20px, 6.25vw, 6.25vw);
   }
 }
+.form__mould input[type=submit] {
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.form__mould input[type=submit]:hover {
+  background-color: #fff;
+  color: #000;
+}
 .form__modul-wrapper {
   margin-left: auto;
   margin-right: auto;

@@ -110,10 +110,10 @@ const onFormSubmit = (e) => {
   // успішна відправка
   overlay.classList.add('overlay__open', 'overlay__success');
   document.body.style.overflowY = 'hidden';
-  // setTimeout(() => {
-  //   overlay.classList.remove('overlay__open', 'overlay__success');
-  //   document.body.style.overflowY = 'visible';
-  // }, 3000);
+  setTimeout(() => {
+    overlay.classList.remove('overlay__open', 'overlay__success');
+    document.body.style.overflowY = 'visible';
+  }, 3000);
 };
 
 nameInput.addEventListener('blur', checkNameValid);

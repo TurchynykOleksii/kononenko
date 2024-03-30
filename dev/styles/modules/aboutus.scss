@@ -261,11 +261,22 @@
     }
   }
 
+  &__item {
+    & {
+      transition: transform 300ms ease-in-out;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
+
 }
 
 .breadcrumbs {
