@@ -98,9 +98,11 @@ const onFormSubmit = (e) => {
 
   // успішна відправка
   overlay.classList.add('overlay__open', 'overlay__success');
-  setTimeout(() => {
-    overlay.classList.remove('overlay__open', 'overlay__success');
-  }, 3000);
+  document.body.style.overflowY = 'hidden';
+  // setTimeout(() => {
+  //   overlay.classList.remove('overlay__open', 'overlay__success');
+  //   document.body.style.overflowY = 'visible';
+  // }, 3000);
 };
 
 nameInput.addEventListener('blur', checkNameValid);
@@ -137,3 +139,32 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Элемент .works__list не найден на странице.');
   }
 });
+//header scroller
+
+let lastScrollY = window.scrollY;
+const header = document.getElementById('header');
+
+function handleScroll() {
+  const currentScrollY = window.scrollY;
+  // Check if the viewport height is more than 1200px
+  if (currentScrollY > 600) {
+    // Add 'header__scrolled' to make header fixed at the top
+    header.classList.add('header__scrolled');
+
+    if (currentScrollY > lastScrollY) {
+      // Scrolling down, hide the header
+      header.classList.remove('visible');
+    } else {
+      // Scrolling up, show the header
+      header.classList.add('visible');
+    }
+  } else {
+    // If viewport height is less than or equal to 1200px, make the header static
+    header.classList.remove('header__scrolled', 'visible');
+  }
+
+  lastScrollY = currentScrollY; // Update the last scroll position
+}
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('resize', handleScroll);

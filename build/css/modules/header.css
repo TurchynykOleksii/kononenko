@@ -4,6 +4,7 @@
   padding-bottom: clamp(1px, 1.19vw, 23px);
   z-index: 3;
   background-color: #fff;
+  transition: top 350ms ease-in-out;
 }
 @media only screen and (max-width: 900px) {
   .header {
@@ -84,4 +85,15 @@
   height: clamp(1px, 1.25vw, 24px);
   background-image: url("../../img/icons/header-arrow.svg");
   background-size: clamp(1px, 1.25vw, 24px);
+}
+
+.header__scrolled {
+  position: fixed;
+  top: -100%;
+  width: 100%;
+  /* Initially hide the header */
+}
+
+.header__scrolled.visible {
+  top: 0;
 }
