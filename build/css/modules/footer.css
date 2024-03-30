@@ -124,6 +124,12 @@
     background-size: clamp(1px, 6.3vw, 57px);
   }
 }
+.footer__link::after {
+  transition: transform 300ms ease-in-out;
+}
+.footer__link:hover::after {
+  transform: rotate(-90deg);
+}
 
 .mobile-menu {
   position: fixed;
