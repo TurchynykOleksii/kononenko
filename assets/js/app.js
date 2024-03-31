@@ -182,7 +182,7 @@ const header = document.getElementById('header');
 
 function handleScroll() {
   const currentScrollY = window.scrollY;
-  if (currentScrollY >= 700) {
+  if (currentScrollY >= 1200) {
     header.classList.add('header__scrolled');
     if (currentScrollY > lastScrollY) {
       header.classList.remove('visible');

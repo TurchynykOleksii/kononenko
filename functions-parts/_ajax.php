@@ -35,7 +35,7 @@ function blog_loadmore() {
             $html .= '</div></div>';
 
             // Закрываем <li>, если это второй пост в паре
-            if ($count % 2 == 1 && $isOpenLi) {
+            if ($count % 2 == 1) {
                 $html .= '</li>';
                 $isOpenLi = false;
             }
@@ -43,13 +43,11 @@ function blog_loadmore() {
             $count++;
         }
 
-        // Закрываем <li>, если после завершения цикла он остался открытым
+        // Закрываем <li>, если он остался открытым после выхода из цикла
         if ($isOpenLi) {
             $html .= '</li>';
         }
-    } else {
-        $html = 'No posts found';
-    }
+    } 
 
     wp_reset_postdata();
 
@@ -57,6 +55,7 @@ function blog_loadmore() {
     $result = ['posts' => $html, 'max_pages' => $query->max_num_pages];
     wp_send_json($result);
 }
+
 
 
 

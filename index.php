@@ -50,36 +50,53 @@ $works_posts = new WP_Query($args);
 
       <?php if ($works_posts->have_posts()) : ?>
       <ul class="works__list">
-        <?php $count = 0; ?>
-        <?php while ($works_posts->have_posts()) : ?>
-        <?php 
-            $li_class = $count % 2 == 0 ? 'works__item' : 'works__item works__item--reverse';
-            ?>
-        <li class="<?= $li_class; ?>">
-          <?php for ($i = 0; $i < 2; $i++) : ?>
-          <?php if (!$works_posts->have_posts()) break; ?>
-          <?php $works_posts->the_post(); ?>
-          <div class="works__wrapper <?php echo $i === 0 ? 'works__wrapper--big' : 'works__wrapper--small'; ?>">
+        <?php $count = 0; // Счетчик постов ?>
+        <?php $liCount = 0; // Счетчик для <li> элементов ?>
+        <?php $isOpenLi = false; // Флаг для отслеживания состояния тега <li> ?>
+        <?php while ($works_posts->have_posts()) : $works_posts->the_post(); ?>
+
+        <?php if ($count % 2 == 0) : // Открываем <li> для первого поста и каждого следующего третьего ?>
+        <?php if ($isOpenLi) : // Закрываем предыдущий <li>, если он открыт ?>
+        </li>
+        <?php $isOpenLi = false; ?>
+        <?php endif; ?>
+        <?php $liClass = $liCount % 2 == 0 ? 'works__item' : 'works__item works__item--reverse'; // Определяем класс для <li> ?>
+        <li class="<?= $liClass ?>">
+          <?php $isOpenLi = true; ?>
+          <?php $liCount++; // Увеличиваем счетчик <li> после создания нового ?>
+          <?php endif; ?>
+
+          <div class="works__wrapper <?= $count % 2 == 0 ? 'works__wrapper--big' : 'works__wrapper--small'; ?>">
             <div class="works__img">
-              <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php the_title(); ?>">
+              <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?= get_the_title(); ?>">
             </div>
             <div class="works__info">
               <div class="works__text">
-                <strong class="works__name"><?php the_title(); ?></strong>
-                <strong class="works__year">/ <?php echo get_the_date('Y'); ?></strong>
+                <strong class="works__name"><?= get_the_title(); ?></strong>
+                <strong class="works__year">/ <?= get_post_meta(get_the_ID(), 'object_year', true); ?></strong>
               </div>
-              <a href="<?php the_permalink(); ?>" class="works__view" data-count='1'>View</a>
+              <a href="<?= get_the_permalink(); ?>" target="_blank" class="works__view">View</a>
             </div>
           </div>
-          <?php endfor; ?>
+
+          <?php if ($count % 2 == 1 && $isOpenLi) : // Закрываем <li> после второго поста ?>
         </li>
-        <?php $count++;  ?>
-        <?php if (!$works_posts->have_posts()) break; ?>
+        <?php $isOpenLi = false; ?>
+        <?php endif; ?>
+
+        <?php $count++; ?>
         <?php endwhile; ?>
+        <?php if ($isOpenLi) : // Закрываем открытый <li>, если цикл завершился ?>
+        </li>
+        <?php endif; ?>
       </ul>
       <?php endif; ?>
 
       <?php wp_reset_postdata(); ?>
+
+
+
+
 
       <button class="works__more" data-count="8">show more</button>
 
