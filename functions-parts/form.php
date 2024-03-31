@@ -1,0 +1,48 @@
+<?php
+function displayForm() {
+?>
+<section class="form">
+  <div class="wrapper">
+    <div class="form__inner">
+      <h3 class="form__title">
+        <span class="form__title-first">How do you feel about</span>
+        <span class="form__title-second">exploring design options with us?</span>
+      </h3>
+      <div class="form__modul-wrapper">
+        <form class="form__mould">
+          <label class="form__label">
+            <input name="name" type="text" class="form__input" placeholder="Your name" />
+            <span class="form__floating-label">Your name</span>
+            <span class="form__error-message">Required field</span>
+          </label>
+          <label class="form__label">
+            <input name="phone" type="tel" class="form__input" placeholder="Phone number" />
+            <span class="form__floating-label">Phone number</span>
+            <span class="form__error-message">Please enter in the format +COUNTRY_CODE ...</span>
+          </label>
+          <label class="form__label">
+            <input name="email" type="email" class="form__input" placeholder="Email" />
+            <span class="form__floating-label">Email</span>
+            <span class="form__error-message">Please check and correct the address</span>
+          </label>
+          <input type="submit" value="let`s get in touch" class="form__submit" />
+        </form>
+        <div class="form__success-screen">
+          <p class="form__submit-result">Sent successfully</p>
+          <div class="form__success-icon"></div>
+          <p class="form__result-text">We will contact you shortly</p>
+        </div>
+        <div class="form__error-screen">
+          <p class="form__submit-result">Unfortunately, an error occurred</p>
+          <div class="form__error-icon"></div>
+          <p class="form__result-text">
+            Please try submitting your request again in a couple of minutes
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?php 
+}
+?>

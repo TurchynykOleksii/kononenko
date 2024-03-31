@@ -5,21 +5,21 @@
 add_action('init', 'init_post_types');
 function init_post_types()
 {
-    register_post_type('news', array(
+    register_post_type('works', array(
         'label' => null,
         'labels' => array(
-            'name' => 'Новини', // основное название для типа записи
-            'singular_name' => 'Новини', // название для одной записи этого типа
-            'add_new' => 'Додати новину', // для добавления новой записи
+            'name' => 'Об`єкти', // основное название для типа записи
+            'singular_name' => 'Об`єкти', // название для одной записи этого типа
+            'add_new' => 'Додати Об`єкт', // для добавления новой записи
             'add_new_item' => 'Додавання', // заголовка у вновь создаваемой записи в админ-панели.
             'edit_item' => 'Редагувати', // для редактирования типа записи
-            'new_item' => 'Нова новина', // текст новой записи
+            'new_item' => 'Новий Об`єкт', // текст новой записи
             'view_item' => 'Перегляд', // для просмотра записи этого типа.
             'search_items' => 'Пошук', // для поиска по этим типам записи
             'not_found' => 'Не знайдено', // если в результате поиска ничего не было найдено
             'not_found_in_trash' => 'В корзині не знайдено', // если не было найдено в корзине
             'parent_item_colon' => '', // для родителей (у древовидных типов)
-            'menu_name' => 'Новини', // название меню
+            'menu_name' => 'Об`єкти', // название меню
         ),
         'description' => '',
         'public' => true,
@@ -34,10 +34,10 @@ function init_post_types()
         'menu_position' => 4,
         'menu_icon' => null,
         'hierarchical' => true,
-        'supports' => array('title', 'editor', 'author', 'revisions'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports' => array('title', 'editor', 'author', 'revisions','thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies' => array(),
         'has_archive' => true,
-        'rewrite' => array('slug' => 'news-post'),
+        'rewrite' => array('slug' => 'works'),
         'query_var' => true,
         'menu_icon' => 'dashicons-analytics'
     ));

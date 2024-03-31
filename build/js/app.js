@@ -56,7 +56,7 @@ const emailInputError = document.querySelector(
   '.form__input[name="email"] ~ .form__error-message'
 );
 const formEl = document.querySelector('.form__mould');
-const overlay = document.querySelector('.overlay');
+// const overlay = document.querySelector('.overlay');
 const formSuccessScreen = document.querySelector('.form__success-screen');
 const formErrorScreen = document.querySelector('.form__error-screen');
 
@@ -90,7 +90,7 @@ const checkEmailValid = (e) => {
 
 const onFormSubmit = (e) => {
   e.preventDefault();
-  if (nameInput.value.trim() === '') {
+  if (nameInput?.value.trim() === '') {
     nameInputError.style.display = 'block';
   }
   if (!emailRegExp.test(emailInput.value.trim().toLowerCase())) {
@@ -100,26 +100,53 @@ const onFormSubmit = (e) => {
     phoneInputError.style.display = 'block';
   }
   if (
-    nameInput.value.trim() === '' ||
+    nameInput?.value.trim() === '' ||
     !emailRegExp.test(emailInput.value.trim().toLowerCase()) ||
     !phoneRegExp.test(phoneInput.value.trim())
   ) {
     return;
   }
+};
 
-  // успішна відправка
+function formSucces() {
+  const overlay = document.querySelector('.overlay');
+  if (!overlay) {
+    console.error('Элемент overlay не найден.');
+    return;
+  }
+
   overlay.classList.add('overlay__open', 'overlay__success');
   document.body.style.overflowY = 'hidden';
+
   setTimeout(() => {
     overlay.classList.remove('overlay__open', 'overlay__success');
     document.body.style.overflowY = 'visible';
   }, 3000);
-};
+}
 
-nameInput.addEventListener('blur', checkNameValid);
-phoneInput.addEventListener('blur', checkPhoneValid);
-emailInput.addEventListener('blur', checkEmailValid);
-formEl.addEventListener('submit', onFormSubmit);
+function formError() {
+  const overlay = document.querySelector('.overlay');
+
+  if (!overlay) {
+    console.error('Элемент overlay не найден.');
+    return;
+  }
+
+  overlay.classList.add('overlay__open', 'overlay__error');
+  document.body.style.overflowY = 'hidden';
+
+  setTimeout(() => {
+    overlay.classList.remove('overlay__open', 'overlay__error');
+    document.body.style.overflowY = 'visible';
+  }, 3000);
+}
+
+nameInput?.addEventListener('blur', checkNameValid);
+phoneInput?.addEventListener('blur', checkPhoneValid);
+emailInput?.addEventListener('blur', checkEmailValid);
+formEl?.addEventListener('wpcf7beforesubmit', onFormSubmit);
+document.addEventListener('wpcf7mailsent', formSucces, false);
+document.addEventListener('wpcf7mailfailed', formError, false);
 
 //chech scroll position
 document.addEventListener('DOMContentLoaded', function () {
@@ -171,3 +198,39 @@ function handleScroll() {
 
 window.addEventListener('scroll', throttle(handleScroll, 200));
 window.addEventListener('resize', throttle(handleScroll, 200));
+
+///ajax load more
+let paged = 2;
+const loadMorePostsBtn = document.querySelector('.works__more');
+const blogList = document.querySelector('.works__list'); // Убедитесь, что у вас есть элемент с этим ID
+const fetchUrl = window.location.origin + '/wp-admin/admin-ajax.php';
+
+loadMorePostsBtn?.addEventListener('click', () => {
+  loadMorePostsBtn?.classList.add('link-loading');
+
+  fetch(fetchUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      paged: paged,
+      action: 'blog_loadmore',
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.posts) {
+        blogList.insertAdjacentHTML('beforeend', data.posts);
+        paged++; // Увеличиваем для следующего запроса
+      }
+      if (paged > data.max_pages) {
+        loadMorePostsBtn.style.display = 'none';
+      }
+      loadMorePostsBtn.classList.remove('link-loading');
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      loadMorePostsBtn.classList.remove('link-loading');
+    });
+});

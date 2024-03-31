@@ -109,11 +109,11 @@
 	add_action( 'after_setup_theme', function(){
 		register_nav_menus( [
 			'header_menu' => 'Меню в шапке',
-			'footer_menu' => 'Меню в подвале'
+			'mobile_menu' => 'Меню мобильное'
 		] );
 
 		# 5.2 Регистрация обложки для постов
-		//add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'post-thumbnails' );
 		//add_theme_support( 'post-thumbnails', array( 'post' ) );          // Только для post
 		//add_theme_support( 'post-thumbnails', array( 'page' ) );          // Только для page
 		//add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) ); // Для post и movie типов
@@ -273,7 +273,11 @@
 	function login_obscure_func(){
 		return 'Помилка: Ви ввели неправильний логін або пароль.';
 	}
+add_filter('wpcf7_form_elements', function($content) {
+	$content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
 
+	return $content;
+});
 	# 8.7 Отключить возможность редактировать файлы в админке для тем, плагинов
 	define('DISALLOW_FILE_EDIT', true);
 
@@ -282,7 +286,7 @@
 
 # 9. Прочее
 	# Страница опций ACF PRO
-	// if (function_exists('acf_add_options_page')) acf_add_options_page();
+	if (function_exists('acf_add_options_page')) acf_add_options_page();
 
 
 	# ACF Map activation
@@ -314,6 +318,8 @@
 	add_filter( 'rank_math/sitemap/post_type_archive_link', function( $archive_url, $post_type ){
 		return 0;
 	}, 10, 2 );
+
+  
 
 
 	# Добавить таксономию(раздел) в url перед постом

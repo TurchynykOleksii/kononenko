@@ -40,17 +40,10 @@ add_filter( 'rank_math/frontend/breadcrumb/items', function($crumbs) {
 
     # rewrite parent page
     # NEWS
-    if (is_singular('news')):
-        $crumbs = generate_link('news', $crumbs);
-    endif;
-
-    if (is_page_template('page-news.php')):
-        $crumbs = [$crumbs[0], $crumbs[1]]; # remove pagination
-    endif;
-
-    if (is_page_template('page-tips.php')):
-        $crumbs = [$crumbs[0], $crumbs[1]]; # remove pagination
-    endif;
+    if (!is_front_page() && count($crumbs) > 2) {
+        $last_item = array_pop($crumbs); // Сохраняем последний элемент
+        $crumbs = array($crumbs[0], $last_item); // Создаем новый массив только с первым и последним элементами
+    }
 
     return $crumbs;
     
